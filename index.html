@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AD ASTRA ROVER</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon" >
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+
+<body onload="dateDiffInDays()">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>SRI SAIRAM INSTITUTIONS,</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>Chennai, INDIA</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>adastraroverteam@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img class="img-fluid rounded" src="img/logo-color.jpg" style="width: 100px; height: 100px; clip-path: circle();" >
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link ">About</a>
+                        <a href="projects.html" class="nav-item nav-link">Projects</a>
+                        <a href="blog.html" class="nav-item nav-link">Gallery</a>
+                        <a href="team.html" class="nav-item nav-link">Team</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img class="w-100" src="img/mars.jpg" alt="Image" >
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Solution </h1>
+                            <a href="testimonial.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">View Team</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/mars.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">AD ASTRA ROVER TEAM</h1>
+                            <a href="testimonial.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">View Team</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(61, 28, 18, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-users text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Team</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">50</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">Exploration</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">500</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-award text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Working hours</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up" id="hours"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">Sometimes the journey teaches lot about your destination.</h1>
+                    </div>
+                    <p class="mb-4">Ad Astra Is a Student-Run, Multidisciplinary Team Driven to Design and Build the Next Generation of
+                        Mars Rovers to Explore the Red Planet's Habitability. Students from various disciplines and technical
+                        clubs from our institution were shortlisted and handpicked based on their interest and skillset. Thus,
+                        our team comprises of 56 space enthusiasts with inquisitive minds who want to learn and work with
+                        extraterrestrial robotics in preparation for upcoming human exploration of Mars. We connect with
+                        the public digitally via our social media handles and our institution’s landing pages.</p>
+                    <!-- <a href="testimonial.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">View Team</a> -->
+                    
+                    <h5 class="fw-bold text-primary text-uppercase">VISION</h5>
+                    <p class="mb-4">
+                        Our vision is to inspire and cultivate the next generation of space explorers and scientists by creating a comprehensive and accessible program for students to engage in cutting-edge research and development in the field of space technology. We aim to foster a community of lifelong learners and innovators who will shape the future of space exploration.
+                    </p>
+                    <h5 class="fw-bold text-primary text-uppercase">MISSION</h5>
+                    <p class="mb-4">
+                        The mission of the student rover team is to design, build, and operate a rover capable of exploring and conducting scientific experiments on other planets, while inspiring and educating future generations of scientists, engineers, and space enthusiasts.
+                    </p>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/about.gif" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our</h5>
+                <h1 class="mb-0">Sub Systems</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="row g-5">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 170px;">
+                                <i class="fa fa-cubes text-white"></i>
+                            </div>
+                            <h4 style="text-align: center;">Program and Controls</h4>
+                            <p class="mb-0" style="text-align: center;">Powering exploration and innovation: The electronics subsystem driving success in rover competitions</p>
+                        </div>
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 170px;">
+                                <i class="fa fa-cubes text-white"></i>
+                            </div>
+                            <h4 style="text-align: center;">AI and Communication</h4>
+                            <p class="mb-0" style="text-align: center;">Navigating the unknown with intelligence and precision: The AI and Communication Subsystem leading the way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/team (1).png" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row g-5">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 170px;">
+                                <i class="fa fa-cubes text-white"></i>
+                            </div>
+                            <h4 style="text-align: center;">Mechanical Design</h4>
+                            <p class="mb-0" style="text-align: center;">Built to conquer even the toughest terrain: The reliable Mechanical Subsystem powering successful exploration.</p>
+                        </div>
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;margin-left: 170px;">
+                                <i class="fa fa-cubes text-white"></i>
+                            </div>
+                            <h4 style="text-align: center;">Science</h4>
+                            <p class="mb-0" style="text-align: center;">Unlocking the mysteries of the Red Planet: The Science Subsystem pioneering discovery beyond our world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
+                    <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 615px;">
+                        <i class="fa fa-cubes text-white"></i>
+                    </div>
+                    <h4 style="text-align: center;">Operations</h4>
+                    <p class="mb-0" style="text-align: center;">Fueling success through support: backbone of the organization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Start -->
+
+
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">AIMS</h5>
+                <h1 class="mb-0">AD ASTRA ROVER TEAM</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item bg-light my-4">
+                    <div class="bg-light rounded">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-primary mb-1">URC</h4>
+                            <small class="text-uppercase">University Rover Challenge</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <div class="d-flex justify-content-between mb-3"><span>University Rover Challenge (URC) is the world's premier robotics competition for college students.  Held annually in the desert of southern Utah in the United States, URC challenges student teams to design and build the next generation of Mars rovers that will one day work alongside astronauts exploring the Red Planet.</span></div>
+                            <a href="https://urc.marssociety.org/home/about-urc" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-primary mb-1">IRC</h4>
+                            <small class="text-uppercase">International Rover Challenge</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <br>
+                            <div class="d-flex justify-content-between mb-3"><span>International Rover Challenge is a space robotics engineering competition by Space Robotics Society. It challenges university students to conceptualize, design, develop and operate an astronaut-assistive next-gen Mars Rover and perform specific missions in Mars simulated conditions.</span></div>
+                            <a href="https://roverchallenge.org/" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="bg-light rounded">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-primary mb-1">ARC</h4>
+                            <small class="text-uppercase">Australian Rover Challenge</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <br>
+                            <div class="d-flex justify-content-between mb-3"><span>Australian Rover Challenge aims to address the four Strategic Space Pillars outlined in the Australian Space Agency 2019 - 2028 Civil Space Strategy by inspiring the next generation of the Australian space workforce to learn-by-doing through a hands-on simulated mission to the Moon and Mars.</span></div>
+                            <a href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
+                        <div class="border-bottom py-4 px-5 mb-4">
+                            <h4 class="text-primary mb-1">ERC</h4>
+                            <small class="text-uppercase">European Rover Challenge</small>
+                        </div>
+                        <div class="p-5 pt-0">
+                            <div class="d-flex justify-content-between mb-3"><span>The European Rover Challenge (ERC) is an integrated programme working towards technological developments, specifically those in GPS-denied environments, with space exploration and utilisation as the leading theme. The ultimate goal of the ERC is to become a  benchmark for planetary robotic activities.</span></div>
+                            <a href="https://roverchallenge.eu/en/erc-robotics-competition/" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
+
+
+    <!-- Quote Start 
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
+                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support</h5>
+                        </div>
+                    </div>
+                    <p class="mb-4">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">Call to ask any question</h5>
+                            <h4 class="text-primary mb-0">+012 345 6789</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-xl-12">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <select class="form-select bg-light border-0" style="height: 55px;">
+                                        <option selected>Select A Service</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 2</option>
+                                        <option value="3">Service 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    Quote End -->
+
+
+    
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px; ">
+                <h5 class="fw-bold text-primary text-uppercase">Technical Support Team</h5>
+                <h1 class="mb-0">Try to be a rainbow in someone’s cloud.</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/EEE_HOD.png" alt="" style="padding: 10%;">
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">K Renganathan</h4>
+                            <p class="text-uppercase m-0">Professor- HOD [EIE] </p>
+                            <p class="text-uppercase m-0"><b >specialization </b> Power Electronics and Control Systems</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/san.png" alt="" style="padding: 10%;">
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">G Shanmugasundar </h4>
+                            <p class="text-uppercase m-0">Professor and Dean R&D </p>
+                            <p class="text-uppercase m-0"><b >specialization </b>Robotics and Mechatronics System Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/swagathaMam.png" alt="" style="padding: 10%;">
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">Swagatha Sarkar</h4>
+                            <p class="text-uppercase m-0">Professor- HOD [AIDS] </p>
+                            <p class="text-uppercase m-0"><b >specialization </b> AI and Communications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/Sam Sirr.png" alt="" style="padding: 10%;">
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">J Sam Austin</h4>
+                            <p class="text-uppercase m-0">Senior R&D Engineer</p>
+                            <p class="text-uppercase m-0"><b >specialization</b>Mechatronics System Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/jayanth.png" alt="" style="padding: 10%;">
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">S A Jayandan</h4>
+                            <p class="text-uppercase m-0">Senior Scientist</p>
+                            <p class="text-uppercase m-0"><b >specialization</b>Robotics and Mechatronics System Design</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/muthu.png" alt="" style="padding: 10%;">
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">A Muthuvel</h4>
+                            <p class="text-uppercase m-0">Senior Executive</p>
+                            <p class="text-uppercase m-0"><b >specialization</b>Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">TEAM STRUCTURE</h5>
+                <h1 class="mb-0">Alone we can do little, together we can do so much.</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/sugi.png" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Sugunesh R</h4>
+                            <small class="text-uppercase">Program and Controls Head- <b>Captain</b></small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        <br>Expertise in PCB design, Sr. Fault Analyst in TECHYY, Projects: developed of electrical vehicle digital
+                        dashboard, ATV telemetry. Electrical team Captain in SAE BAJA International, Winner of Smart India
+                        Hackathon 2022(Hardware).
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/karthi.png" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Karthick Selvan A </h4>
+                            <small class="text-uppercase"> Artificial Intelligence Head- <b>Vice-captain-SIT</b></small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Dynamic and Energetic student who am Enthusiast applying pursuing knowledge in various Projects to gain the Practical Experience. 
+                        Had  Working Experience in AI projects like Autonomous drones and Autonomous UAV's and worked on Edge Computing Devices.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/Nirmal.jpg" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Nirmal Raja K L</h4>
+                            <small class="text-uppercase">Communication Head</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Expertise in AI-ML, Image Processing, Drone Technology, and Core Python. Citizen Scientist at NASA -
+                        (IASC), Student member of Space & Satellite Professional International, Research Intern at Sairam
+                        Techno Incubator Foundation. Winner of Smart India Hackathon 2022(Hardware).
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/Santhosh.jpg" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Santhoshkumar M</h4>
+                            <small class="text-uppercase">Mechanical Head</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        <br><br>Expertise in parametric design, <br> Internship at KOBELCO India - Apprenticeship at wheels India limited -
+                        Design Team Leader -Dirt bike, SAE INDIA Member, ISHRAE Member.<br>
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/varun.png" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Varunapriyan K</h4>
+                            <small class="text-uppercase">Science Head</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        <br>Expertise in Machine Learning, Signal Processing, Drone Technology. Citizen Scientist at NASA - (IASC),
+                        Student member of Space & Satellite Professional International, Winner of Smart India Hackathon.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/keerthi.png" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Keerthivasan R</h4>
+                            <small class="text-uppercase">Operations Head</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        7 Members team who work from a non-technical standpoint, the Business sub-team is critical in
+                        shaping and supporting our team. Business liaison, logistics management, media and design, outreach
+                        coordination, and finance management are among our responsibilities.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/Bharath.jpg" style="width: 100px; height: 100px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Bharath Kumar M R</h4>
+                            <small class="text-uppercase">Electricals Head- <b>Vice-captain-SEC</b></small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        EV engineer, Battery engineer, Instrumentation & electronics engineer, PCB designer. Assessment of Contact Parameters of Semi-Elliptical 
+                        Soft Fingertips for Anthropomorphic Robotic 
+                        Grippers(research paper), member of Powertrain subsystem, space enthusiast.<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Blog Start
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Latest Blog</h5>
+                <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
+                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
+                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                            </div>
+                            <h4 class="mb-3">How to build a website</h4>
+                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
+                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
+                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
+                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                            </div>
+                            <h4 class="mb-3">How to build a website</h4>
+                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
+                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
+                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
+                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                            </div>
+                            <h4 class="mb-3">How to build a website</h4>
+                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
+                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    Blog Start -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+            <h1 class="mb-0">Partners</h1>
+        </div>
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                    <img src="img/vendor-1.jpg" alt="" style="width: 123.62px; height: 80.92px; margin-left: 400px; ">
+                    <img src="img/vendor-2.jpg" alt="" style="width: 222.62px; height: 80.92px; margin-left: 200px; ">
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+    
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="index.html" class="navbar-brand p-0">
+                            <img class="img-fluid rounded" src="img/logo-color.png" style="width: 200px; height: 200px; clip-path: circle();" >
+                        </a>
+                        <p class="mt-3 mb-4">Design, build, and operate a rover capable of exploring and conducting scientific experiments on other planets, while inspiring and educating future generations of scientists, engineers, and space enthusiasts.</p>
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                                <button class="btn btn-dark">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">SRI SAIRAM INSTITUTIONS</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Chennai, INDIA</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">adastraroverteam@gmail.com</p>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Popular Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About</a>
+                                <a class="text-light mb-2" href="projects.html"><i class="bi bi-arrow-right text-primary me-2"></i>Projects</a>
+                                <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                                <a class="text-light" href="blog.html"><i class="bi bi-arrow-right text-primary me-2"></i>Blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #010101;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">AD ASTRA</a>. All Rights Reserved. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
