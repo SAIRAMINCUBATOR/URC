@@ -1,7 +1,7 @@
 
 function dateDiffInDays() {
     const _MS_PER_DAY = 1000 * 60 * 60;
-    const a = new Date("2023-10-15"),
+    const a = new Date("2024-01-24"),
     b = new Date()
     // Discard the time and time-zone information.
     const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
