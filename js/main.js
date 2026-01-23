@@ -1,4 +1,3 @@
-
 function dateDiffInDays() {
     const _MS_PER_DAY = 1000 * 60 * 60;
     const a = new Date("2024-01-24"),
@@ -6,8 +5,8 @@ function dateDiffInDays() {
     // Discard the time and time-zone information.
     const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
     const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
-    console.log(Math.floor((utc1 - utc2) / _MS_PER_DAY));
-    document.getElementById("hours").innerHTML= '<h1 class="text-white mb-0" data-toggle="counter-up" id="hours">'+Math.floor((utc1 - utc2) / _MS_PER_DAY)+"</h1>";
+    console.log(Math.floor((utc2 - utc1) / _MS_PER_DAY));
+    document.getElementById("hours").innerHTML= '<h1 class="text-white mb-0" data-toggle="counter-up" id="hours">'+Math.floor((utc2 - utc1) / _MS_PER_DAY)+"</h1>";
   }
 (function ($) {
     "use strict";
