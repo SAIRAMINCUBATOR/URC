@@ -1,0 +1,165 @@
+/* ===== PORTAL EXTENSIONS (uses ../style.css design tokens) ===== */
+
+.portal-body { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Simplified top bar for portal pages */
+.portal-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 16px 0; background: rgba(5,5,8,0.9);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.portal-nav-inner {
+  max-width: var(--container-width); margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.portal-nav-brand { display: flex; align-items: center; gap: 12px; }
+.portal-nav-brand img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.portal-nav-brand span {
+  font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700;
+  letter-spacing: 2px; background: var(--accent-gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.portal-nav-tag {
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted); padding-left: 12px;
+  border-left: 1px solid var(--border-subtle);
+}
+.portal-nav-right { display: flex; align-items: center; gap: 16px; }
+.portal-user-chip {
+  font-family: var(--font-mono); font-size: .78rem; color: var(--text-secondary);
+}
+.portal-role-badge {
+  font-family: var(--font-mono); font-size: .65rem; letter-spacing: 1px;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
+  background: rgba(232,122,45,0.12); border: 1px solid var(--border-accent); color: var(--accent-light);
+}
+.btn-ghost {
+  background: transparent; color: var(--text-secondary); border: 1px solid var(--border-subtle);
+  font-family: var(--font-heading); font-size: .72rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 9px 18px; border-radius: 40px; cursor: pointer;
+  transition: var(--transition-fast);
+}
+.btn-ghost:hover { color: var(--text-primary); border-color: var(--border-accent); }
+
+.portal-main { flex: 1; padding: 110px 24px 60px; max-width: var(--container-width); margin: 0 auto; width: 100%; }
+
+/* Auth screen (login / set password) */
+.auth-wrap {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;
+  position: relative; z-index: 2;
+}
+.auth-card {
+  width: 100%; max-width: 400px; background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius); padding: 44px 36px; position: relative; overflow: hidden;
+}
+.auth-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent-gradient);
+}
+.auth-logo { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 32px; }
+.auth-logo img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+.auth-logo-text { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; letter-spacing: 4px; }
+.auth-subtitle {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-muted); text-align: center; margin-top: -22px; margin-bottom: 28px;
+}
+.auth-error {
+  background: rgba(193,68,14,0.12); border: 1px solid rgba(193,68,14,0.4); color: #ff8a65;
+  font-size: .82rem; padding: 10px 14px; border-radius: 10px; margin-bottom: 16px; display: none;
+}
+.auth-error.show { display: block; }
+.auth-hint { font-size: .78rem; color: var(--text-muted); margin-top: 18px; text-align: center; line-height: 1.6; }
+
+/* Section headers */
+.portal-section-title {
+  font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700;
+  letter-spacing: .5px; margin-bottom: 4px;
+}
+.portal-section-sub {
+  font-family: var(--font-mono); font-size: .74rem; color: var(--text-muted);
+  letter-spacing: .5px; margin-bottom: 24px;
+}
+
+/* Stat cards row */
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 36px; }
+.pstat-card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px;
+  padding: 20px 22px;
+}
+.pstat-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--accent-light); }
+.pstat-label { font-family: var(--font-mono); font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
+
+/* Tab switcher */
+.portal-tabs { display: flex; gap: 6px; margin-bottom: 28px; border-bottom: 1px solid var(--border-subtle); flex-wrap: wrap; }
+.portal-tab {
+  font-family: var(--font-heading); font-size: .78rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-secondary); background: none; border: none;
+  padding: 12px 18px; cursor: pointer; position: relative; transition: var(--transition-fast);
+}
+.portal-tab::after {
+  content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px;
+  background: var(--accent-gradient); transform: scaleX(0); transition: var(--transition-fast);
+}
+.portal-tab.active { color: var(--text-primary); }
+.portal-tab.active::after { transform: scaleX(1); }
+.portal-panel { display: none; }
+.portal-panel.active { display: block; }
+
+/* Cards / panel */
+.p-card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--card-radius);
+  padding: 28px 26px; margin-bottom: 20px;
+}
+.p-card h3 { font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 18px; font-weight: 600; }
+
+/* Attendance / document rows */
+.p-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--border-subtle); flex-wrap: wrap;
+}
+.p-row:last-child { border-bottom: none; }
+.p-row-main { display: flex; flex-direction: column; gap: 3px; }
+.p-row-title { font-size: .92rem; font-weight: 500; }
+.p-row-sub { font-family: var(--font-mono); font-size: .72rem; color: var(--text-muted); }
+.p-row-actions { display: flex; align-items: center; gap: 10px; }
+
+.status-pill {
+  font-family: var(--font-mono); font-size: .65rem; letter-spacing: 1px; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border-subtle);
+}
+.status-pill.present { color: #6fcf97; border-color: rgba(111,207,151,0.3); background: rgba(111,207,151,0.08); }
+.status-pill.absent { color: #ff8a65; border-color: rgba(255,138,101,0.3); background: rgba(255,138,101,0.08); }
+.status-pill.od, .status-pill.incubation { color: var(--accent-light); border-color: var(--border-accent); background: rgba(232,122,45,0.08); }
+.status-pill.pending { color: var(--text-muted); }
+.status-pill.approved { color: #6fcf97; border-color: rgba(111,207,151,0.3); background: rgba(111,207,151,0.08); }
+
+.btn-sm { padding: 8px 18px; font-size: .68rem; }
+.doc-link { font-family: var(--font-mono); font-size: .72rem; color: var(--accent-light); text-decoration: underline; }
+
+.empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: .85rem; }
+
+/* File upload zone */
+.upload-zone {
+  border: 1px dashed var(--border-accent); border-radius: 14px; padding: 24px; text-align: center;
+  margin-top: 12px; background: rgba(232,122,45,0.03);
+}
+.upload-zone input[type="file"] {
+  font-family: var(--font-body); font-size: .82rem; color: var(--text-secondary); width: 100%;
+}
+
+.toast {
+  position: fixed; bottom: 24px; right: 24px; background: var(--bg-secondary);
+  border: 1px solid var(--border-accent); border-radius: 12px; padding: 14px 20px;
+  font-size: .85rem; box-shadow: var(--glow-md); z-index: 2000; opacity: 0; transform: translateY(10px);
+  transition: var(--transition-base); pointer-events: none; max-width: 320px;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+.toast.error { border-color: rgba(193,68,14,0.5); }
+
+@media (max-width: 640px) {
+  .portal-nav-tag { display: none; }
+  .portal-user-chip { display: none; }
+  .p-row { flex-direction: column; align-items: flex-start; }
+  .p-row-actions { width: 100%; justify-content: flex-start; }
+}

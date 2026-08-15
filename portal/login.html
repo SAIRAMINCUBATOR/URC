@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Team Portal — AD ASTRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logo.png" type="image/png">
+<link rel="stylesheet" href="../style.css?v=4">
+<link rel="stylesheet" href="portal.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="portal-body">
+
+<canvas id="star-canvas"></canvas>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="../assets/logo.png" alt="Ad Astra">
+      <span class="auth-logo-text">AD ASTRA</span>
+    </div>
+    <div class="auth-subtitle">Team Portal</div>
+
+    <div class="auth-error" id="authError"></div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@sairam.edu.in" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" id="loginBtn">
+        Log In
+      </button>
+    </form>
+
+    <div class="auth-hint">
+      Access is by invitation only.
+    </div>
+  </div>
+</div>
+
+<script src="portal-config.js"></script>
+<script>
+  // If already logged in, skip straight to dashboard
+  (async () => {
+    const { data: { session } } = await portalClient.auth.getSession();
+    if (session) window.location.href = "dashboard.html";
+  })();
+
+  const form = document.getElementById("loginForm");
+  const errorBox = document.getElementById("authError");
+  const loginBtn = document.getElementById("loginBtn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorBox.classList.remove("show");
+    loginBtn.textContent = "Logging in...";
+    loginBtn.disabled = true;
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    const { error } = await portalClient.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      errorBox.textContent = "Login failed — check your email and password, or contact your captain.";
+      errorBox.classList.add("show");
+      loginBtn.textContent = "Log In";
+      loginBtn.disabled = false;
+      return;
+    }
+
+    window.location.href = "dashboard.html";
+  });
+</script>
+
+</body>
+</html>

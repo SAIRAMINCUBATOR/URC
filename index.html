@@ -2,811 +2,448 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>AD ASTRA ROVER</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Driven by Curiosity,Powered by Innovation" name="keywords">
-    <meta content="Driven by Curiosity,Powered by Innovation" name="description">
-
-    <!-- Favicon -->
-    <link href="img/logo.png" rel="icon" >
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description"
+    content="Team Ad Astra — A student-run multidisciplinary rover team from Sri Sairam Institutions, Chennai. Designing Mars rovers to explore the Red Planet.">
+  <title>AD ASTRA — To the Stars, Through Hardships</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 
-<body onload="dateDiffInDays()">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner"></div>
+<body>
+
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-rover">
+      <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="15" width="60" height="25" rx="5" fill="#E87A2D" opacity="0.8" />
+        <rect x="35" y="5" width="20" height="15" rx="3" fill="#E87A2D" opacity="0.6" />
+        <line x1="45" y1="5" x2="45" y2="0" stroke="#E87A2D" stroke-width="2" />
+        <rect x="42" y="-3" width="6" height="5" rx="1" fill="#E87A2D" opacity="0.7" />
+        <line x1="80" y1="25" x2="95" y2="20" stroke="#E87A2D" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="95" y1="20" x2="105" y2="28" stroke="#E87A2D" stroke-width="2" stroke-linecap="round" />
+        <circle cx="25" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="25" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="55" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="55" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="80" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="80" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <line x1="25" y1="40" x2="35" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+        <line x1="55" y1="40" x2="65" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+      </svg>
     </div>
-    <!-- Spinner End -->
-
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>SAIRAM INSTITUTIONS,</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>Chennai, INDIA</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>adastraroverteam@gmail.com</small>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
-                </div>
-            </div>
-        </div>
+    <div class="preloader-text">AD ASTRA</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
     </div>
-    <!-- Topbar End -->
+  </div>
 
+  <!-- STAR CANVAS -->
+  <canvas id="star-canvas"></canvas>
 
-    <!-- Navbar & Carousel Start -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <img class="img-fluid rounded" src="img/logo-color.jpg" style="width: 100px; height: 100px; clip-path: circle();" >
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="irc.html" class="nav-item nav-link ">IRC</a>
-                        <a href="about.html" class="nav-item nav-link ">About</a>
-                        <a href="projects.html" class="nav-item nav-link">Projects</a>
-                        <a href="blog.html" class="nav-item nav-link">Gallery</a>
-                        <a href="team.html" class="nav-item nav-link">Team</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+  <!-- SPACE & ROVER ELEMENTS -->
+  <div class="parallax-dust">
+  <div class="space-asset satellite-1">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M40 30L60 30L60 70L40 70Z M20 40L40 40L40 60L20 60Z M60 40L80 40L80 60L60 60Z M48 20L52 20L52 30L48 30Z M48 70L52 70L52 80L48 80Z"
+        fill="rgba(232,122,45,0.15)" />
+      <circle cx="50" cy="50" r="4" fill="var(--accent)" />
+    </svg>
+  </div>
+  <div class="space-asset drone-2">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 40L70 40L70 60L30 60Z M45 25L55 25L55 40L45 40Z M35 60L45 75L30 75Z M65 60L55 75L70 75Z"
+        fill="rgba(108,58,237,0.15)" />
+      <circle cx="25" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+      <circle cx="75" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+    </svg>
+  </div>
+  <div class="space-asset rock-3"></div>
+  <div class="space-asset rock-4"></div>
+  <div class="space-asset rock-5"></div>
+  <div class="space-asset rover-arm">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 80L30 80L30 60L50 60L50 40L70 40L70 20L80 20" fill="none" stroke="rgba(232,122,45,0.2)"
+        stroke-width="4" />
+      <circle cx="25" cy="80" r="5" fill="rgba(232,122,45,0.3)" />
+      <circle cx="50" cy="60" r="4" fill="rgba(232,122,45,0.3)" />
+      <circle cx="75" cy="20" r="6" fill="rgba(232,122,45,0.4)" />
+    </svg>
+  </div>
+  <div class="space-asset rock-6"></div>
+  <div class="space-asset rock-7"></div>
+  </div>
 
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img class="w-100" src="img/mars.jpg" alt="Image" >
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Solution </h1>
-                            <a href="team.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">View Team</a>
-                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/mars.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">AD ASTRA ROVER TEAM</h1>
-                            <a href="team.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">View Team</a>
-                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="assets/logo.png" alt="Ad Astra Logo">
+        <span class="nav-logo-text">AD ASTRA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="subsystems.html">Subsystems</a>
+        <a href="competitions.html">Competitions</a>
+        <a href="team.html">Team</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal/login.html" class="nav-portal-link">Portal</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
-    <!-- Navbar & Carousel End -->
+  </nav>
 
-
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(61, 28, 18, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="#home" class="active">Home</a><a href="#about">About</a><a href="subsystems.html">Subsystems</a>
+      <a href="competitions.html">Competitions</a><a href="team.html">Team</a><a href="achievements.html">Achievements</a><a
+        href="contact.html">Contact</a><a href="portal/login.html" class="nav-portal-link">Portal</a>
     </div>
-    <!-- Full Screen Search End -->
+  </div>
 
-
-    <!-- Facts Start -->
-    <div class="container-fluid facts py-5 pt-lg-0">
-        <div class="container py-5 pt-lg-0">
-            <div class="row gx-0">
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-users text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Team</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">50</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-check text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-primary mb-0">WIP in %</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">70</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
-                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
-                            <i class="fa fa-award text-primary"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Working hours</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up" id="hours"></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="Ad Astra Logo" class="hero-logo">
+      <h1 class="hero-title">
+        <span class="hero-title-glitch" data-text="AD ASTRA" id="hero-title">AD ASTRA</span>
+      </h1>
+      <p class="hero-tagline">To the Stars, Through Hardships</p>
+      <p class="hero-subtitle" id="hero-typed"></p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary">Explore Our Mission</a>
+        <a href="contact.html" class="btn btn-outline">Contact us</a>
+      </div>
     </div>
-    <!-- Facts Start -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-                        <h1 class="mb-0">Sometimes the journey teaches lot about your destination.</h1>
-                    </div>
-                    <p class="mb-4">Ad Astra Is a Student-Run, Multidisciplinary Team Driven to Design and Build the Next Generation of
-                        Mars Rovers to Explore the Red Planet's Habitability. Students from various disciplines and technical
-                        clubs from our institution were shortlisted and handpicked based on their interest and skillset. Thus,
-                        our team comprises of 56 space enthusiasts with inquisitive minds who want to learn and work with
-                        extraterrestrial robotics in preparation for upcoming human exploration of Mars. We connect with
-                        the public digitally via our social media handles and our institution’s landing pages.</p>
-                    <!-- <a href="testimonial.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">View Team</a> -->
-                    
-                    <h5 class="fw-bold text-primary text-uppercase">VISION</h5>
-                    <p class="mb-4">
-                        To inspire and cultivate the next generation of space explorers and scientists by establishing an accessible platform for students to engage in advanced research and development in space technology. This initiative aims to foster a community of lifelong learners and innovators equipped to shape the future of space exploration.
-                    </p>
-                    <h5 class="fw-bold text-primary text-uppercase">MISSION</h5>
-                    <p class="mb-4">
-                        To design, build, and operate a rover for exploring and conducting scientific experiments on other planets. Our project advances space exploration by: Pushing Boundaries: Advancing technological frontiers in robotics. Hands-on Learning: Fostering problem-solving and collaboration. STEM Promotion: Vigorously promoting education to prepare future innovators for the challenges of space technology.
-                    </p>
-                </div>
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/about.gif" style="object-fit: cover;">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="hero-rover-track">
+      <div class="rover-silhouette">
+        <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="15" width="60" height="25" rx="5" fill="currentColor" />
+          <rect x="35" y="5" width="20" height="15" rx="3" fill="currentColor" />
+          <line x1="80" y1="25" x2="100" y2="18" stroke="currentColor" stroke-width="2" />
+          <circle cx="25" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+          <circle cx="55" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+          <circle cx="80" cy="45" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </div>
+      <div class="rover-tracks"></div>
     </div>
-    <!-- About End -->
-
-
-    <!-- Features Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our</h5>
-                <h1 class="mb-0">Sub Systems</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 170px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4 style="text-align: center;">Embedded Hardware</h4>
-                            <p class="mb-0" style="text-align: center;">Custom-designed electronics and power systems ensuring efficient energy distribution, reliable control, and long-duration operation.</p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 170px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4 style="text-align: center;">Embedded Software</h4>
-                            <p class="mb-0" style="text-align: center;">Embedded intelligence responsible for smooth motion control, adaptive terrain response, communication handling, and system safety.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="img/team (1).png" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="row g-5">
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 170px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4 style="text-align: center;">Mechanical</h4>
-                            <p class="mb-0" style="text-align: center;">Rugged and reliable mechanical structure designed for all-terrain mobility, stability, and precise manipulation in challenging environments.</p>
-                        </div>
-                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
-                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;margin-left: 170px;">
-                                <i class="fa fa-cubes text-white"></i>
-                            </div>
-                            <h4 style="text-align: center;">Software</h4>
-                            <p class="mb-0" style="text-align: center;">Autonomous software stack enabling navigation, perception, mapping, and real-time mission planning with intuitive control and monitoring.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 mt-4">
-                <div class="col-lg-6 wow zoomIn" data-wow-delay="1.0s">
-                    <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 284px;">
-                        <i class="fa fa-cubes text-white"></i>
-                    </div>
-                    <h4 style="text-align: center;">Astrobiology</h4>
-                    <p class="mb-0" style="text-align: center;">Scientific subsystem focused on soil sampling, environmental analysis, and detection of potential biological and chemical indicators.</p>
-                </div>
-                <div class="col-lg-6 wow zoomIn" data-wow-delay="1.0s">
-                    <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; margin-left: 284px;">
-                        <i class="fa fa-bullhorn text-white"></i>
-                    </div>
-                    <h4 style="text-align: center;">Media & Marketing</h4>
-                    <p class="mb-0" style="text-align: center;">Strategizes branding, digital outreach, and content creation to maximize sponsor visibility, audience engagement, and the rover's public impact across platforms.</p>
-                </div>
-            </div>
-        </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
-    <!-- Features Start -->
+  </section>
 
 
-    <!-- Pricing Plan Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">AIMS</h5>
-                <h1 class="mb-0">AD ASTRA ROVER TEAM</h1>
+  <!-- ===== ACHIEVEMENTS SLIDER ===== -->
+  <section class="section achievements-slider-sec" id="achievements-showcase">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Glory & Milestones</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Our Achievements</h2>
+        <p class="section-desc">A glimpse of our journey, triumphs, and key milestones in space robotics competitions.</p>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="swiper achievements-swiper reveal-scale">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide achievement-slide">
+            <div class="slide-image-wrapper">
+              <img src="assets/IRC_2026.JPG" alt="IRC 2026">
+              <div class="slide-overlay"></div>
             </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item bg-light my-4">
-                    <div class="bg-light rounded">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">URC</h4>
-                            <small class="text-uppercase">University Rover Challenge</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <div class="d-flex justify-content-between mb-3"><span>University Rover Challenge (URC) is the world's premier robotics competition for college students.  Held annually in the desert of southern Utah in the United States, URC challenges student teams to design and build the next generation of Mars rovers that will one day work alongside astronauts exploring the Red Planet.</span></div>
-                            <a href="https://urc.marssociety.org/home/about-urc" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">IRC</h4>
-                            <small class="text-uppercase">International Rover Challenge</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <br>
-                            <div class="d-flex justify-content-between mb-3"><span>International Rover Challenge is a space robotics engineering competition by Space Robotics Society. It challenges university students to conceptualize, design, develop and operate an astronaut-assistive next-gen Mars Rover and perform specific missions in Mars simulated conditions.</span></div>
-                            <a href="https://roverchallenge.org/" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="bg-light rounded">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">ARC</h4>
-                            <small class="text-uppercase">Australian Rover Challenge</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <br>
-                            <div class="d-flex justify-content-between mb-3"><span>Australian Rover Challenge aims to address the four Strategic Space Pillars outlined in the Australian Space Agency 2019 - 2028 Civil Space Strategy by inspiring the next generation of the Australian space workforce to learn-by-doing through a hands-on simulated mission to the Moon and Mars.</span></div>
-                            <a href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="bg-white rounded shadow position-relative" style="z-index: 1;">
-                        <div class="border-bottom py-4 px-5 mb-4">
-                            <h4 class="text-primary mb-1">ERC</h4>
-                            <small class="text-uppercase">European Rover Challenge</small>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <div class="d-flex justify-content-between mb-3"><span>The European Rover Challenge (ERC) is an integrated programme working towards technological developments, specifically those in GPS-denied environments, with space exploration and utilisation as the leading theme. The ultimate goal of the ERC is to become a  benchmark for planetary robotic activities.</span></div>
-                            <a href="https://roverchallenge.eu/en/erc-robotics-competition/" class="btn btn-primary py-2 px-4 mt-4">Know More</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="slide-content">
+              <span class="slide-tag">IRC 2026</span>
+              <h3>1st Runner Up</h3>
+              <p>Secured the 2nd position globally at the International Rover Challenge 2026, showcasing high-precision autonomous navigation and manipulation.</p>
             </div>
+          </div>
+          
+          <!-- Slide 2 -->
+          <div class="swiper-slide achievement-slide">
+            <div class="slide-image-wrapper">
+              <img src="assets/IRoC_2024.jpg" alt="ISRO IRoC 2024">
+              <div class="slide-overlay"></div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-tag">ISRO IRoC 2024</span>
+              <h3>1st Runner Up</h3>
+              <p>Achieved top honors at the ISRO Indian Rover Challenge, demonstrating exceptional capability in Autonomous operations.</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide achievement-slide">
+            <div class="slide-image-wrapper">
+              <img src="assets/urc1.jpeg" alt="URC 2025">
+              <div class="slide-overlay"></div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-tag">URC 2025</span>
+              <h3>Utah Qualification</h3>
+              <p>Designed and qualified the rover to compete against elite international teams in the Mars-like desert of southern Utah, USA.</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide achievement-slide">
+            <div class="slide-image-wrapper">
+              <img src="assets/IRC_2023.jpg" alt="IRC 2023">
+              <div class="slide-overlay"></div>
+            </div>
+            <div class="slide-content">
+              <span class="slide-tag">IRC 2023</span>
+              <h3>Debut & Excellence</h3>
+              <p>Marked our debut in international space robotics challenges, laying the groundwork for our future engineering designs.</p>
+            </div>
+          </div>
+
         </div>
+
+        <!-- Pagination & Navigation -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </div>
     </div>
-    <!-- Pricing Plan End -->
+  </section>
 
 
-    <!-- Quote Start 
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
-                    </div>
-                    <div class="row gx-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
-                        </div>
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support</h5>
-                        </div>
-                    </div>
-                    <p class="mb-4">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
-                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-xl-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <span class="section-label">About Us</span>
+          <h3>Sometimes the journey teaches a lot about your <span>destination.</span></h3>
+          <p>Ad Astra is a student-run, multidisciplinary team driven to design and build the next generation of Mars
+            rovers to explore the Red Planet's habitability. Students from various disciplines and technical clubs from
+            Sri Sairam Institutions were shortlisted and handpicked based on their interest and skillset.</p>
+          <p>Our team comprises 89 space enthusiasts with inquisitive minds who want to learn and work with
+            extraterrestrial robotics in preparation for upcoming human exploration of Mars.</p>
+            <!-- Goals extracted to dedicated section below -->
         </div>
+        <div class="stats-grid reveal-right">
+          <div class="stat-card tilt-card">
+            <div class="stat-number" data-target="90">0</div>
+            <div class="stat-label">Team Members</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-label">Competitions</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-number" data-target="4">0</div>
+            <div class="stat-label">Subsystems</div>
+          </div>
+          <div class="stat-card tilt-card">
+            <div class="stat-number" data-target="5">0</div>
+            <div class="stat-label">Rover Version</div>
+          </div>
+        </div>
+      </div>
     </div>
-    Quote End -->
+  </section>
 
-
-    
-  <!-- Team Start -->
-  <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px; ">
-            <h5 class="fw-bold text-primary text-uppercase">Technical Support Team</h5>
-            <h1 class="mb-0">Try to be a rainbow in someone's cloud.</h1>
+  <!-- ===== OUR GOALS ===== -->
+  <section class="section goals" id="goals">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Principles</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Goals & Objectives</h2>
+      </div>
+      <div class="goals-grid reveal">
+        <div class="goal-card tilt-card" data-goal="vision">
+          <div class="goal-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h4>Vision</h4>
+          <p>Establish an accessible platform for students to engage in advanced R&D in space robotics technology.</p>
         </div>
-        <div class="row g-5">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/EEE_HOD.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">K Renganathan</h4>
-                        <p class="text-uppercase m-0">Professor- HOD [EIE] </p>
-                        <p class="text-uppercase m-0"><b >Power Electronics and Control Systems </b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/san.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">G Shanmugasundar </h4>
-                        <p class="text-uppercase m-0">Professor and Dean R&D </p>
-                        <p class="text-uppercase m-0"><b >Robotics and Mechatronics System Design </b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/swagathaMam.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">Swagatha Sarkar</h4>
-                        <p class="text-uppercase m-0">Professor- HOD [AIDS] </p>
-                        <p class="text-uppercase m-0"><b >AI and Communications </b> </p>
-                    </div>
-                </div>
-            </div>
+        <div class="goal-card tilt-card" data-goal="mission">
+          <div class="goal-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+          <h4>Mission</h4>
+          <p>Design, build, and operate rovers capable of exploring and conducting scientific experiments on other planets.</p>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="row g-5">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/sam_austin.jpg" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">J Sam Austin</h4>
-                        <p class="text-uppercase m-0">Senior R&D Engineer</p>
-                        <p class="text-uppercase m-0"><b >Vehicle Dynamics</b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/jayanth.webp" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">S A Jayandan</h4>
-                        <p class="text-uppercase m-0">Senior Scientist</p>
-                        <p class="text-uppercase m-0"><b >Enviromental Microbiologist</b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/muthu.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">A Muthuvel</h4>
-                        <p class="text-uppercase m-0">Senior Executive</p>
-                        <p class="text-uppercase m-0"><b >Business Management</b></p>
-                    </div>
-                </div>
-            </div>
+        <div class="goal-card tilt-card" data-goal="innovation">
+          <div class="goal-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></div>
+          <h4>Innovation</h4>
+          <p>Advance technological frontiers in autonomous navigation, dexterous manipulation, and extreme retrieval.</p>
         </div>
-        <div class="row g-5 justify-content-center mt-5">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/dhanush_kumar.jpg" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">Dhanush Kumar V</h4>
-                        <p class="text-uppercase m-0">Junior R&D</p>
-                        <p class="text-uppercase m-0"><b>Robotics and Automation</b></p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      
+      <!-- Goals details container -->
+      <div class="goals-details-container" id="goals-details-container">
+        <div class="details-pane" id="details-vision">
+          <h3 class="details-title">Our <span>Vision</span></h3>
+          <p class="details-desc">Our long-term aspirations center around building an outstanding foundation for student-led aerospace research and development.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Fostering hands-on, multidisciplinary engineering experience by bridging academic theory and real-world aerospace applications.</li>
+            <li><span>✦</span> Nurturing space exploration interest through local community outreach programs and student-led seminars.</li>
+            <li><span>✦</span> Establishing a center of excellence for rover technology and space robotics R&D at Sri Sairam Institutions.</li>
+            <li><span>✦</span> Providing student engineers with the skills, resources, and mentorship to pioneer future space robotics.</li>
+          </ul>
         </div>
+        <div class="details-pane" id="details-mission">
+          <h3 class="details-title">Our <span>Mission</span></h3>
+          <p class="details-desc">We design, validate, and execute mission-critical systems that push the limits of planetary exploration and rover engineering.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Designing and building robust, next-generation Mars rovers capable of traversing extremely rugged, unstructured Martian terrains.</li>
+            <li><span>✦</span> Conducting high-precision onboard scientific analysis to search for extremophiles and analyze geological samples.</li>
+            <li><span>✦</span> Systems integration: coordinating mechanical, electrical, and software systems into a highly integrated, reliable machine.</li>
+            <li><span>✦</span> Participating in and representing our institution in global rover competitions such as URC, IRC, and ARC.</li>
+          </ul>
+        </div>
+        <div class="details-pane" id="details-innovation">
+          <h3 class="details-title">Our <span>Innovation</span></h3>
+          <p class="details-desc">We develop innovative technologies and software systems to address complex planetary exploration challenges.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Autonomous Navigation: implementing LiDAR-based obstacle avoidance, visual SLAM, and custom pathfinding.</li>
+            <li><span>✦</span> Robotic Manipulation: building custom 6-DOF robotic arms with inverse kinematics for precise panel and tool operations.</li>
+            <li><span>✦</span> Onboard Science Lab: developing high-suction soil acquisition systems and custom spectrometry instrumentation.</li>
+            <li><span>✦</span> Teleoperation & Comms: establishing low-latency, long-range wireless communication links for remote rover control.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-</div>
-<!-- Team End -->
+  </section>
 
-    <!-- Testimonial Start -->
-    <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">TEAM STRUCTURE</h5>
-                <h1 class="mb-0">Alone we can do little, together we can do so much.</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/Bharath.jpg" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Bharath Kumar M R</h4>
-                            <small class="text-uppercase">Electrical & Electronics Head- <b>Captain-SEC</b></small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        EV engineer, Battery engineer, Instrumentation & electronics engineer, PCB designer. Assessment of Contact Parameters of Semi-Elliptical 
-                        Soft Fingertips for Anthropomorphic Robotic 
-                        Grippers(research paper), member of Powertrain subsystem, space enthusiast.<br>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/karthi.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Karthick Selvan A </h4>
-                            <small class="text-uppercase"> Artificial Intelligence Head- <b>SIT</b></small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Expertise in AI-ML technology. Experience  in handling  Edge Computing Devices like Jetson nano , Raspberry Pi  Working Experience in AI projects like Autonomous Vehicle, Drone, UAV's. 
-                         Research Intern at Sri Sairam Techno Incubator Foundation. Worked as intern in VISION(AI) and InternShala(ISP).
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/Santhosh.jpg" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Santhoshkumar M</h4>
-                            <small class="text-uppercase">Mechanical Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Expertise in parametric design, <br> Internship at KOBELCO India - Apprenticeship at wheels India limited -
-                        Design Team Leader -Dirt bike, SAE INDIA Member, ISHRAE Member.<br><br><br>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/Dhanush.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Dhanush Kumar V</h4>
-                            <small class="text-uppercase">Communication and Control System Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Expertise in AI-ML, Drone Technology,  Robotics and automation. Research Intern at Sairam
-                        Techno Incubator Foundation.
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/keerthi.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Keerthivasan R</h4>
-                            <small class="text-uppercase">Science Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        7 Members team who work from a non-technical standpoint, the Business sub-team is critical in
-                        shaping and supporting our team. Business liaison, logistics management, media and design, outreach
-                        coordination, and finance management are among our responsibilities.
-                    </div>
-                </div>
-            </div>
+  <!-- ===== MISSIONS ===== -->
+  <section class="section missions" id="missions">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Competitions</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Critical Mission Tasks</h2>
+        <p class="section-desc">Our rovers are built to combat the most devastating Mars-simulated terrains.</p>
+      </div>
+      <div class="missions-grid">
+        <div class="mission-card reveal-scale">
+          <div class="mission-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg></div>
+          <h4>Autonomous Navigation (RADO)</h4>
+          <p>A robust perception architecture designed for reliable operation across complex unstructured terrain, enabling traversal between gates via GNSS and computer vision.</p>
         </div>
-    </div> -->
-    <!-- Testimonial End -->
-
-
-    <!-- Blog Start
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Latest Blog</h5>
-                <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-1.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
-                            </div>
-                            <h4 class="mb-3">How to build a website</h4>
-                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
-                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-2.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
-                            </div>
-                            <h4 class="mb-3">How to build a website</h4>
-                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
-                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="blog-item bg-light rounded overflow-hidden">
-                        <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/blog-3.jpg" alt="">
-                            <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="">Web Design</a>
-                        </div>
-                        <div class="p-4">
-                            <div class="d-flex mb-3">
-                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
-                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
-                            </div>
-                            <h4 class="mb-3">How to build a website</h4>
-                            <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p>
-                            <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="mission-card reveal-scale" style="transition-delay: 0.1s">
+          <div class="mission-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <h4>Dexterous Manipulation (IDMO)</h4>
+          <p>Precision control using a 6-DOF robotic arm to perform complex maintenance: opening panels, operating switches, typing on keyboards, and turning valves.</p>
         </div>
+        <div class="mission-card reveal-scale" style="transition-delay: 0.2s">
+          <div class="mission-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5.5a4 4 0 0 1 1.5 3l1 5.5a2 2 0 0 1-2 2.5H8.5a2 2 0 0 1-2-2.5l1-5.5A4 4 0 0 1 9 8.5V3z"/><path d="M9 3h6"/></svg></div>
+          <h4>Scientific Exploration (AbEx)</h4>
+          <p>Vacuum-based high-suction soil acquisition and onboard spectrometers to conduct on-site biological analysis, hunting for extremophiles.</p>
+        </div>
+        <div class="mission-card reveal-scale" style="transition-delay: 0.3s">
+          <div class="mission-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+          <h4>Extreme Retrieval</h4>
+          <p>Traversing rugged drops and rock fields to pick up heavy payloads (like toolboxes and water bottles) and accurately deliver them to astronauts in the field.</p>
+        </div>
+      </div>
     </div>
-    Blog Start -->
-
-
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-            <h1 class="mb-0">Partners</h1>
-        </div>
-        <div class="container py-4 mb-4">
-            <div class="row g-4 justify-content-center align-items-center">
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vendor-1.jpg" alt="Partner 1" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vector-2.png" alt="Partner 2" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vendor-3.jpeg" alt="Partner 3" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vendor-4.jpeg" alt="Partner 4" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center align-items-center mt-2">
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Altium_logo.png" alt="Altium" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Solidworks_logo.png" alt="Solidworks" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Vecmocon_logo.png" alt="Vecmocon" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Ansys_logo.jpg" alt="Ansys" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-            </div>
-        </div>
+  </section>
+  
+  <!-- ===== TEAM SNIPPET ===== -->
+  <section class="section team-snippet" style="background: radial-gradient(ellipse 50% 50% at 50% 50%, rgba(108,58,237,0.05) 0%, transparent 100%); text-align: center; position: relative;">
+    <div class="container reveal">
+      <h2 style="font-size: 3rem; margin-bottom: 20px; font-weight: 800; color: var(--text-main);">90 Minds. 1 Goal.</h2>
+      <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem;">It takes a village to build a rover. Discover the brilliant minds behind our electrical, software, mechanical, and science subsystems.</p>
+      <a href="team.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 1.1rem;">Meet The Entire Team</a>
     </div>
-    <!-- Vendor End -->
-    
+  </section>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand p-0">
-                            <img class="img-fluid rounded" src="img/logo-color.png" style="width: 200px; height: 200px; clip-path: circle();" >
-                        </a>
-                        <p class="mt-3 mb-4">Design, build, and operate a rover capable of exploring and conducting scientific experiments on other planets, while inspiring and educating future generations of scientists, engineers, and space enthusiasts.</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-dark">Sign Up</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Get In Touch</h3>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">SAIRAM INSTITUTIONS</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">Chennai, INDIA</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">adastraroverteam@gmail.com</p>
-                            </div>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary btn-square me-2" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Popular Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About</a>
-                                <a class="text-light mb-2" href="projects.html"><i class="bi bi-arrow-right text-primary me-2"></i>Projects</a>
-                                <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                                <a class="text-light" href="blog.html"><i class="bi bi-arrow-right text-primary me-2"></i>Blogs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ===== PARTNERS ===== -->
+  <section class="section" id="partners">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Partners & Sponsors</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Powered By Partnership</h2>
+        <p class="section-desc">Our partners fuel our vision of building rovers for interplanetary exploration.</p>
+      </div>
+      <!-- Institutional Partners -->
+      <h3 class="partners-tier-label">Institutional Partners</h3>
+      <div class="partners-grid partners-grid-top reveal">
+        <div class="partner-logo partner-logo-lg tilt-card"><img src="assets/sponsors/vendor-1.jpg" alt="Sairam Institutions"></div>
+        <div class="partner-logo partner-logo-lg tilt-card"><img src="assets/sponsors/vector-2.png" alt="Sri Sairam Techno Incubator Foundation"></div>
+      </div>
+      <!-- Technical Sponsors -->
+      <h3 class="partners-tier-label" style="margin-top: 60px;">Technical Sponsors</h3>
+      <div class="partners-grid reveal">
+        <div class="partner-logo tilt-card"><img src="assets/sponsors/Altium_logo.png" alt="Altium"></div>
+        <div class="partner-logo tilt-card"><img src="assets/sponsors/Solidworks_logo.png" alt="Solidworks"></div>
+        <div class="partner-logo tilt-card"><img src="assets/sponsors/Vecmocon_logo.png" alt="Vecmocon"></div>
+        <div class="partner-logo tilt-card"><img src="assets/sponsors/Ansys_logo.jpg" alt="Ansys"></div>
+      </div>
     </div>
-    <div class="container-fluid text-white" style="background: #010101;">
-        <div class="container text-center">
-            <div class="row justify-content-end">
-                <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">AD ASTRA</a>. All Rights Reserved. 
-                    </div>
-                </div>
-            </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo"><img src="assets/logo.png" alt="Ad Astra"><span class="nav-logo-text">AD ASTRA</span></a>
+          <p>A student-run multidisciplinary team from Sri Sairam Institutions, Chennai, building Mars rovers.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/teamadastra/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/ad-astra-rover-team/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://www.youtube.com/@teamadastra" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+          </div>
         </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html#about">About Us</a><a href="subsystems.html">Subsystems</a><a href="competitions.html">Competitions</a><a href="team.html">Our Team</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compete</h4><a href="https://urc.marssociety.org/home/about-urc" target="_blank">URC</a><a
+            href="https://roverchallenge.org/" target="_blank">IRC</a><a
+            href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" target="_blank">ARC</a><a
+            href="https://roverchallenge.eu/en/erc-robotics-competition/" target="_blank">ERC</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4><a href="mailto:adastraroverteam@gmail.com">adastraroverteam@gmail.com</a><a
+            href="tel:+917530085108">+91 7530085108</a><a href="#">Sri Sairam Institutions</a><a href="#">Chennai,
+            India</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Team Ad Astra. All Rights Reserved.</p>
+        <div class="footer-bottom-links"><a href="index.html">To the Stars, Through Hardships ✦</a></div>
+      </div>
     </div>
-    <!-- Footer End -->
+  </footer>
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Main Script -->
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description"
+    content="Team Ad Astra — A student-run multidisciplinary rover team from Sri Sairam Institutions, Chennai. Designing Mars rovers to explore the Red Planet.">
+  <title>AD ASTRA — To the Stars, Through Hardships</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-rover">
+      <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="15" width="60" height="25" rx="5" fill="#E87A2D" opacity="0.8" />
+        <rect x="35" y="5" width="20" height="15" rx="3" fill="#E87A2D" opacity="0.6" />
+        <line x1="45" y1="5" x2="45" y2="0" stroke="#E87A2D" stroke-width="2" />
+        <rect x="42" y="-3" width="6" height="5" rx="1" fill="#E87A2D" opacity="0.7" />
+        <line x1="80" y1="25" x2="95" y2="20" stroke="#E87A2D" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="95" y1="20" x2="105" y2="28" stroke="#E87A2D" stroke-width="2" stroke-linecap="round" />
+        <circle cx="25" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="25" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="55" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="55" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="80" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="80" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <line x1="25" y1="40" x2="35" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+        <line x1="55" y1="40" x2="65" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+      </svg>
+    </div>
+    <div class="preloader-text">AD ASTRA</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- STAR CANVAS -->
+  <canvas id="star-canvas"></canvas>
+
+  <!-- SPACE & ROVER ELEMENTS -->
+  <div class="parallax-dust">
+  <div class="space-asset satellite-1">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M40 30L60 30L60 70L40 70Z M20 40L40 40L40 60L20 60Z M60 40L80 40L80 60L60 60Z M48 20L52 20L52 30L48 30Z M48 70L52 70L52 80L48 80Z"
+        fill="rgba(232,122,45,0.15)" />
+      <circle cx="50" cy="50" r="4" fill="var(--accent)" />
+    </svg>
+  </div>
+  <div class="space-asset drone-2">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 40L70 40L70 60L30 60Z M45 25L55 25L55 40L45 40Z M35 60L45 75L30 75Z M65 60L55 75L70 75Z"
+        fill="rgba(108,58,237,0.15)" />
+      <circle cx="25" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+      <circle cx="75" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+    </svg>
+  </div>
+  <div class="space-asset rock-3"></div>
+  <div class="space-asset rock-4"></div>
+  <div class="space-asset rock-5"></div>
+  <div class="space-asset rover-arm">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 80L30 80L30 60L50 60L50 40L70 40L70 20L80 20" fill="none" stroke="rgba(232,122,45,0.2)"
+        stroke-width="4" />
+      <circle cx="25" cy="80" r="5" fill="rgba(232,122,45,0.3)" />
+      <circle cx="50" cy="60" r="4" fill="rgba(232,122,45,0.3)" />
+      <circle cx="75" cy="20" r="6" fill="rgba(232,122,45,0.4)" />
+    </svg>
+  </div>
+  <div class="space-asset rock-6"></div>
+  <div class="space-asset rock-7"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Ad Astra Logo">
+        <span class="nav-logo-text">AD ASTRA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="subsystems.html" class="active">Subsystems</a>
+        <a href="competitions.html">Competitions</a>
+        <a href="team.html">Team</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal/login.html" class="nav-portal-link">Portal</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a><a href="index.html#about">About</a><a href="subsystems.html" class="active">Subsystems</a>
+      <a href="competitions.html">Competitions</a><a href="team.html">Team</a><a href="achievements.html">Achievements</a><a
+        href="contact.html">Contact</a><a href="portal/login.html" class="nav-portal-link">Portal</a>
+    </div>
+  </div>
+
+<div style="height: 120px; width: 100%;"></div>
+  <!-- ===== SUBSYSTEMS ===== -->
+  <section class="section subsystems" id="subsystems">
+    <!-- Interactive Backgrounds -->
+    <div class="subsystems-bg-visuals">
+      <div class="bg-visual visual-embedded" id="bg-embedded"></div>
+      <div class="bg-visual visual-software" id="bg-software"></div>
+      <div class="bg-visual visual-mechanical" id="bg-mechanical"></div>
+      <div class="bg-visual visual-media" id="bg-media"></div>
+    </div>
+
+    <div class="container relative-z">
+      <div class="section-header reveal">
+        <span class="section-label">Our Subsystems</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Engineering the Future of Exploration</h2>
+        <p class="section-desc">Four specialized divisions working in synergy to build a combat-proven rover platform.
+        </p>
+      </div>
+      <div class="subsystems-grid">
+        <div class="subsystem-card tilt-card reveal reveal-delay-1" data-target="embedded">
+          <div class="subsystem-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Embedded</h3>
+          <p>Custom-designed electronics, power systems, motion control, adaptive terrain response, communication
+            handling, and system safety intelligence.</p>
+        </div>
+        <div class="subsystem-card tilt-card reveal reveal-delay-2" data-target="software">
+          <div class="subsystem-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg></div>
+          <h3>Software</h3>
+          <p>Autonomous navigation stack enabling perception, mapping, AI-driven decision making, and real-time mission
+            planning with intuitive control.</p>
+        </div>
+        <div class="subsystem-card tilt-card reveal reveal-delay-3" data-target="mechanical">
+          <div class="subsystem-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <h3>Mechanical</h3>
+          <p>Rugged and reliable mechanical structure designed for all-terrain mobility, stability, and precise
+            manipulation in challenging environments.</p>
+        </div>
+        <div class="subsystem-card tilt-card reveal reveal-delay-4" data-target="media">
+          <div class="subsystem-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><path d="M15 5l3 3"/></svg></div>
+          <h3>Media & Marketing</h3>
+          <p>Strategizes branding, digital outreach, and content creation to maximize sponsor visibility and audience
+            engagement across platforms.</p>
+        </div>
+      </div>
+
+      <!-- EXPANDABLE DETAILS AREA -->
+      <div id="subsystem-details-container" class="subsystem-details-container">
+        <div class="details-pane" id="details-embedded">
+            <h3 class="details-title">Embedded <span>Subsystem</span></h3>
+            <p class="details-desc">Our brain stem. The embedded division constructs resilient custom PCBs and redundant power architectures to survive intense environments.</p>
+            <ul class="details-list">
+                <li><span>✦</span> Custom Mixed-Signal Board Design (Altium)</li>
+                <li><span>✦</span> CAN Bus / I2C robust communication networks</li>
+                <li><span>✦</span> Redundant BMS & Fault-Tolerant Power Delivery</li>
+                <li><span>✦</span> ROS2 Micro-ROS bridging for actuator control</li>
+            </ul>
+        </div>
+        <div class="details-pane" id="details-software">
+            <h3 class="details-title">Software <span>Subsystem</span></h3>
+            <p class="details-desc">The cortical core. We harness cutting-edge perception and autonomy to execute mission logic independent of operator latency.</p>
+            <ul class="details-list">
+                <li><span>✦</span> Centimeter-accurate RTK-GNSS Navigation Loop</li>
+                <li><span>✦</span> 3D LiDAR & Realsense V-SLAM Mapping</li>
+                <li><span>✦</span> YOLO-based perception & ArUco Gate Traversal</li>
+                <li><span>✦</span> ROS2 Galactic / Humble Ecosystem Integration</li>
+            </ul>
+        </div>
+        <div class="details-pane" id="details-mechanical">
+            <h3 class="details-title">Mechanical <span>Subsystem</span></h3>
+            <p class="details-desc">The chassis and muscle. Designing rugged, aerospace-grade structures that traverse extreme slopes without tipping.</p>
+            <ul class="details-list">
+                <li><span>✦</span> Modified Rocker-Bogie Suspension System</li>
+                <li><span>✦</span> 6-DOF Robotic Arm with cycloidal drives</li>
+                <li><span>✦</span> Advanced Science payload carousel drilling</li>
+                <li><span>✦</span> Topology Optimization via SolidWorks/Ansys</li>
+            </ul>
+        </div>
+        <div class="details-pane" id="details-media">
+            <h3 class="details-title">Media & <span>Marketing</span></h3>
+            <p class="details-desc">The voice. Orchestrating digital outreach, branding, and acquiring technical sponsorships critical for our R&D roadmap.</p>
+            <ul class="details-list">
+                <li><span>✦</span> Graphic Design & 3D Rendering (Blender)</li>
+                <li><span>✦</span> Professional Cinematography & Video Editing</li>
+                <li><span>✦</span> PR & Inter-University Sponsor Networking</li>
+                <li><span>✦</span> Global Social Media Audience Growth</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROVER PROJECTS & SYSTEMS ===== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Core Engineering</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Technical Subsystems & Projects</h2>
+        <p class="section-desc">Key systems and engineering projects contributing to the overall mission success of the rover platform.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- 1. Rover Avionics & Electronics Architecture -->
+        <div class="project-card tilt-card reveal reveal-delay-1" data-target="proj-avionics">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Rover Avionics & Electronics Architecture</h3>
+          <p>Serves as the central electronics backbone of the rover, integrating the motherboard, power distribution, STM32-based control systems, peripheral interfaces, and modular hardware architecture to enable reliable communication and subsystem coordination.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 2. Intelligent Power Management System -->
+        <div class="project-card tilt-card reveal reveal-delay-2" data-target="proj-power">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Intelligent Power Management System</h3>
+          <p>A robust power management platform featuring regulated power conversion, protection circuits, voltage distribution, and efficient energy delivery for all onboard rover electronics.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 3. Science Instrumentation Platform -->
+        <div class="project-card tilt-card reveal reveal-delay-3" data-target="proj-science-platform">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Science Instrumentation Platform</h3>
+          <p>Provides modular sensor integration, signal conditioning, calibration, and data acquisition for environmental monitoring and scientific experiments performed during planetary exploration.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 4. Autonomous Sample Acquisition System -->
+        <div class="project-card tilt-card reveal reveal-delay-4" data-target="proj-sample">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+          </div>
+          <h3>Autonomous Sample Acquisition System</h3>
+          <p>An integrated sample collection platform consisting of soil, rock, and fluid acquisition mechanisms engineered for reliable collection, handling, and storage of planetary samples.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 5. Robotic Manipulation System -->
+        <div class="project-card tilt-card reveal reveal-delay-5" data-target="proj-manipulation">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>Robotic Manipulation System</h3>
+          <p>A precision robotic arm subsystem designed for sample handling, payload manipulation, and scientific operations through coordinated motion control and end-effector integration.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 6. Rover Mobility Platform -->
+        <div class="project-card tilt-card reveal reveal-delay-6" data-target="proj-mobility">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          </div>
+          <h3>Rover Mobility Platform</h3>
+          <p>A terrain-adaptive mobility subsystem built around the Rocker-Bogie suspension architecture, providing stability, traction, and reliable traversal across uneven planetary terrain.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 7. Scientific Analysis System -->
+        <div class="project-card tilt-card reveal reveal-delay-7" data-target="proj-analysis">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.586a1 1 0 0 1-.293.707l-6.414 6.414a2 2 0 0 0-.586 1.414V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-1.879a2 2 0 0 0-.586-1.414l-6.414-6.414A1 1 0 0 1 14 9.586V2z"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+          </div>
+          <h3>Scientific Analysis System</h3>
+          <p>An onboard science subsystem that supports preliminary chemical analysis of collected samples through integrated sensors, reagent handling, and scientific testing workflows.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+
+        <!-- 8. Mission Systems Engineering -->
+        <div class="project-card tilt-card reveal reveal-delay-8" data-target="proj-systems">
+          <div class="project-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polygon points="2 17 12 22 22 17"/><polygon points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3>Mission Systems Engineering</h3>
+          <p>Responsible for technical documentation, mission planning, subsystem integration, verification, validation, engineering reports, and competition deliverables throughout the rover development lifecycle.</p>
+          <div class="learn-more-btn">Learn More ✦</div>
+        </div>
+      </div>
+
+      <!-- Project Details Container -->
+      <div class="project-details-container" id="project-details-container">
+        <!-- 1. Avionics Details -->
+        <div class="project-details-pane" id="details-proj-avionics">
+          <h3 class="details-title">Rover Avionics & <span>Electronics Architecture</span></h3>
+          <p class="details-desc">The central communication and computational nerve center of the rover platform.</p>
+          <ul class="details-list">
+            <li><span>✦</span> High-performance STM32-based control systems running real-time operating systems (RTOS).</li>
+            <li><span>✦</span> Robust peripheral interfaces and modular hardware architecture for hot-swappable subsystem modules.</li>
+            <li><span>✦</span> Unified motherboard integrating power, command routing, and localized microcontrollers.</li>
+            <li><span>✦</span> Multi-protocol communication architecture supporting CAN Bus, RS-485, UART, and SPI protocols.</li>
+          </ul>
+        </div>
+
+        <!-- 2. Power Details -->
+        <div class="project-details-pane" id="details-proj-power">
+          <h3 class="details-title">Intelligent <span>Power Management System</span></h3>
+          <p class="details-desc">Ensures clean, reliable, and highly regulated energy delivery across the entire rover.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Dynamic high-efficiency DC-DC buck, boost, and buck-boost regulated power conversion.</li>
+            <li><span>✦</span> Comprehensive protection circuits guarding against overvoltage, overcurrent, and short circuits.</li>
+            <li><span>✦</span> Intelligent lithium-ion battery management system (BMS) with cell balancing and telemetry tracking.</li>
+            <li><span>✦</span> Multi-tier voltage rail distribution (5V, 12V, 19V, 24V) optimized for sensor and actuator nodes.</li>
+          </ul>
+        </div>
+
+        <!-- 3. Science Platform Details -->
+        <div class="project-details-pane" id="details-proj-science-platform">
+          <h3 class="details-title">Science <span>Instrumentation Platform</span></h3>
+          <p class="details-desc">An integrated suite of sensors and data logging platforms for physical and chemical analysis.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Modular sensor interface supporting a wide array of temperature, pressure, and gas sensors.</li>
+            <li><span>✦</span> Precision analog signal conditioning and low-noise operational amplifiers.</li>
+            <li><span>✦</span> High-resolution data acquisition system (DAQ) for real-time sensor logging.</li>
+            <li><span>✦</span> Integrated field calibration workflows ensuring scientific measurement reliability.</li>
+          </ul>
+        </div>
+
+        <!-- 4. Sample Acquisition Details -->
+        <div class="project-details-pane" id="details-proj-sample">
+          <h3 class="details-title">Autonomous <span>Sample Acquisition System</span></h3>
+          <p class="details-desc">Designed for collecting and preserving planetary material for analysis.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Dynamic soil drilling and deep rock core extraction mechanisms.</li>
+            <li><span>✦</span> Fluid sample acquisition modules using micro-pumps and vacuum systems.</li>
+            <li><span>✦</span> Multi-chamber hermetically sealed carousel for sample container storage.</li>
+            <li><span>✦</span> Active torque sensing and autonomous stall recovery algorithms during drilling.</li>
+          </ul>
+        </div>
+
+        <!-- 5. Robotic Manipulation Details -->
+        <div class="project-details-pane" id="details-proj-manipulation">
+          <h3 class="details-title">Robotic <span>Manipulation System</span></h3>
+          <p class="details-desc">The high-precision physical manipulator of the rover platform.</p>
+          <ul class="details-list">
+            <li><span>✦</span> 6-Degrees-of-Freedom (DOF) mechanical arm configuration built for high payload capacity.</li>
+            <li><span>✦</span> Custom cycloidal and high-reduction planetary gear drives for high torque output.</li>
+            <li><span>✦</span> Coordinated motion control using inverse kinematics and closed-loop feedback.</li>
+            <li><span>✦</span> Quick-change end-effector interface supporting gripper, screwdriver, and probe modules.</li>
+          </ul>
+        </div>
+
+        <!-- 6. Mobility Details -->
+        <div class="project-details-pane" id="details-proj-mobility">
+          <h3 class="details-title">Rover <span>Mobility Platform</span></h3>
+          <p class="details-desc">Enables navigation across extreme slopes, loose sand, and rocky terrain.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Custom-engineered Rocker-Bogie suspension keeping all six wheels in contact with the ground.</li>
+            <li><span>✦</span> High-torque brushless DC hub motors integrated directly into the wheels.</li>
+            <li><span>✦</span> Generous ground clearance and open-wheel design preventing debris accumulation.</li>
+            <li><span>✦</span> Deep-tread high-traction aluminum wheels optimized for loose sandy soils.</li>
+          </ul>
+        </div>
+
+        <!-- 7. Scientific Analysis Details -->
+        <div class="project-details-pane" id="details-proj-analysis">
+          <h3 class="details-title">Scientific <span>Analysis System</span></h3>
+          <p class="details-desc">An onboard chemistry lab for preliminary geological assessments.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Automated reagent dispensing and mixing chambers for soil/water assays.</li>
+            <li><span>✦</span> Spectroscopic measurement tools (RAMAN / UV-Vis) integrated into the carousel.</li>
+            <li><span>✦</span> High-resolution digital microscopic imaging for mineral structure analysis.</li>
+            <li><span>✦</span> Automated cleaning cycle minimizing cross-contamination between test samples.</li>
+          </ul>
+        </div>
+
+        <!-- 8. Mission Systems Engineering Details -->
+        <div class="project-details-pane" id="details-proj-systems">
+          <h3 class="details-title">Mission <span>Systems Engineering</span></h3>
+          <p class="details-desc">The engineering framework that ties all technical subsystems together.</p>
+          <ul class="details-list">
+            <li><span>✦</span> Multi-system interface control documentation (ICD) and compatibility management.</li>
+            <li><span>✦</span> Rigorous hardware-in-the-loop (HIL) verification and validation protocols.</li>
+            <li><span>✦</span> Rigorous failure modes, effects, and criticality analysis (FMECA) workflows.</li>
+            <li><span>✦</span> Engineering budget tracking: mass, power, RF link, and financial constraints.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo"><img src="assets/logo.png" alt="Ad Astra"><span class="nav-logo-text">AD ASTRA</span></a>
+          <p>A student-run multidisciplinary team from Sri Sairam Institutions, Chennai, building Mars rovers.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/teamadastra/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/ad-astra-rover-team/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://www.youtube.com/@teamadastra" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html#about">About Us</a><a href="subsystems.html">Subsystems</a><a href="competitions.html">Competitions</a><a href="team.html">Our Team</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compete</h4><a href="https://urc.marssociety.org/home/about-urc" target="_blank">URC</a><a
+            href="https://roverchallenge.org/" target="_blank">IRC</a><a
+            href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" target="_blank">ARC</a><a
+            href="https://roverchallenge.eu/en/erc-robotics-competition/" target="_blank">ERC</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4><a href="mailto:adastraroverteam@gmail.com">adastraroverteam@gmail.com</a><a
+            href="tel:+917530085108">+91 7530085108</a><a href="#">Sri Sairam Institutions</a><a href="#">Chennai,
+            India</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Team Ad Astra. All Rights Reserved.</p>
+        <div class="footer-bottom-links"><a href="index.html">To the Stars, Through Hardships ✦</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Main Script -->
+  <script src="script.js?v=4"></script>
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description"
+    content="Team Ad Astra — A student-run multidisciplinary rover team from Sri Sairam Institutions, Chennai. Designing Mars rovers to explore the Red Planet.">
+  <title>AD ASTRA — To the Stars, Through Hardships</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-rover">
+      <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="15" width="60" height="25" rx="5" fill="#E87A2D" opacity="0.8" />
+        <rect x="35" y="5" width="20" height="15" rx="3" fill="#E87A2D" opacity="0.6" />
+        <line x1="45" y1="5" x2="45" y2="0" stroke="#E87A2D" stroke-width="2" />
+        <rect x="42" y="-3" width="6" height="5" rx="1" fill="#E87A2D" opacity="0.7" />
+        <line x1="80" y1="25" x2="95" y2="20" stroke="#E87A2D" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="95" y1="20" x2="105" y2="28" stroke="#E87A2D" stroke-width="2" stroke-linecap="round" />
+        <circle cx="25" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="25" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="55" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="55" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="80" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="80" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <line x1="25" y1="40" x2="35" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+        <line x1="55" y1="40" x2="65" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+      </svg>
+    </div>
+    <div class="preloader-text">AD ASTRA</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- STAR CANVAS -->
+  <canvas id="star-canvas"></canvas>
+
+    <!-- SPACE & ROVER ELEMENTS -->
+  <div class="parallax-dust">
+  <div class="space-asset satellite-1">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M40 30L60 30L60 70L40 70Z M20 40L40 40L40 60L20 60Z M60 40L80 40L80 60L60 60Z M48 20L52 20L52 30L48 30Z M48 70L52 70L52 80L48 80Z"
+        fill="rgba(232,122,45,0.15)" />
+      <circle cx="50" cy="50" r="4" fill="var(--accent)" />
+    </svg>
+  </div>
+  <div class="space-asset drone-2">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 40L70 40L70 60L30 60Z M45 25L55 25L55 40L45 40Z M35 60L45 75L30 75Z M65 60L55 75L70 75Z"
+        fill="rgba(108,58,237,0.15)" />
+      <circle cx="25" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+      <circle cx="75" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+    </svg>
+  </div>
+  <div class="space-asset rock-3"></div>
+  <div class="space-asset rock-4"></div>
+  <div class="space-asset rock-5"></div>
+  <div class="space-asset rover-arm">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 80L30 80L30 60L50 60L50 40L70 40L70 20L80 20" fill="none" stroke="rgba(232,122,45,0.2)"
+        stroke-width="4" />
+      <circle cx="25" cy="80" r="5" fill="rgba(232,122,45,0.3)" />
+      <circle cx="50" cy="60" r="4" fill="rgba(232,122,45,0.3)" />
+      <circle cx="75" cy="20" r="6" fill="rgba(232,122,45,0.4)" />
+    </svg>
+  </div>
+  <div class="space-asset rock-6"></div>
+  <div class="space-asset rock-7"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Ad Astra Logo">
+        <span class="nav-logo-text">AD ASTRA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="subsystems.html">Subsystems</a>
+        <a href="competitions.html" class="active">Competitions</a>
+        <a href="team.html">Team</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal/login.html" class="nav-portal-link">Portal</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a><a href="index.html#about">About</a><a href="subsystems.html">Subsystems</a>
+      <a href="competitions.html" class="active">Competitions</a><a href="team.html">Team</a><a
+        href="achievements.html">Achievements</a><a href="contact.html">Contact</a><a href="portal/login.html" class="nav-portal-link">Portal</a>
+    </div>
+  </div>
+
+  <div style="height: 120px; width: 100%;"></div>
+  <section class="section" id="competitions">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Competitions</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Where We Compete</h2>
+        <p class="section-desc">Proving our engineering excellence on the world's most challenging rover competition stages. Click a competition to explore the tasks.</p>
+      </div>
+      <div class="competitions-grid">
+        <div class="competition-card tilt-card reveal reveal-delay-1" data-comp="urc">
+          <div class="competition-badge">URC</div>
+          <h3>University Rover Challenge</h3>
+          <p>The world's premier robotics competition for college students, held at the Mars Desert Research Station in Utah, USA.</p>
+          <a href="https://urc.marssociety.org/home/about-urc" target="_blank" class="btn btn-outline">Know More</a>
+        </div>
+        <div class="competition-card tilt-card reveal reveal-delay-2" data-comp="irc">
+          <div class="competition-badge">IRC</div>
+          <h3>International Rover Challenge</h3>
+          <p>A space robotics competition simulating the hostile terrain of Mars. Engineering rovers for extreme landscapes.</p>
+          <a href="https://roverchallenge.org/" target="_blank" class="btn btn-outline">Know More</a>
+        </div>
+        <div class="competition-card tilt-card reveal reveal-delay-3" data-comp="arch">
+          <div class="competition-badge">ARCH</div>
+          <h3>Australian Rover Challenge</h3>
+          <p>Challenging teams to design rovers capable of operating in simulated extraterrestrial environments.</p>
+          <a href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" target="_blank" class="btn btn-outline">Know More</a>
+        </div>
+        <div class="competition-card tilt-card reveal reveal-delay-4" data-comp="erc">
+          <div class="competition-badge">ERC</div>
+          <h3>European Rover Challenge</h3>
+          <p>Europe's premier space &amp; robotics event combining Mars rover competition with science exhibitions.</p>
+          <a href="https://roverchallenge.eu/en/erc-robotics-competition/" target="_blank" class="btn btn-outline">Know More</a>
+        </div>
+      </div>
+
+      <!-- EXPANDABLE COMPETITION DETAILS -->
+      <div id="comp-details-container" class="subsystem-details-container" style="margin-top: 48px;">
+
+        <div class="details-pane" id="comp-urc">
+          <h3 class="details-title">URC <span>Mission Tasks</span></h3>
+          <p class="details-desc">The University Rover Challenge tests rovers across four rigorous tasks in the Utah desert, simulating real Mars exploration scenarios.</p>
+          <ul class="details-list">
+            <li><span>✦</span> <strong>Science Mission:</strong> Collect soil samples and perform onboard biological/chemical analysis to detect signs of life</li>
+            <li><span>✦</span> <strong>Extreme Delivery:</strong> Navigate rugged terrain to deliver tools, supplies, and equipment to field astronauts</li>
+            <li><span>✦</span> <strong>Equipment Servicing:</strong> Use a robotic arm to operate switches, type on keyboards, and manipulate equipment panels</li>
+            <li><span>✦</span> <strong>Autonomous Navigation:</strong> Traverse between GPS waypoints and locate visual markers autonomously without operator input</li>
+          </ul>
+        </div>
+
+        <div class="details-pane" id="comp-irc">
+          <h3 class="details-title">IRC <span>Mission Tasks</span></h3>
+          <p class="details-desc">The International Rover Challenge pushes rovers to their limits across Mars-simulated terrain in India, testing engineering reliability and innovation.</p>
+          <ul class="details-list">
+            <li><span>✦</span> <strong>Autonomous Traversal (RADO):</strong> Navigate between GNSS waypoints and ArUco-marked gates without human intervention</li>
+            <li><span>✦</span> <strong>Instrument Deployment (IDMO):</strong> Perform dexterous manipulation — open panels, flip switches, turn valves using a robotic arm</li>
+            <li><span>✦</span> <strong>Astrobiological Exploration (AbEx):</strong> Collect soil samples using suction mechanisms and analyze for extremophile signatures</li>
+            <li><span>✦</span> <strong>Extreme Retrieval &amp; Delivery:</strong> Pick up heavy payloads from rocky terrain and deliver them to designated locations</li>
+          </ul>
+        </div>
+
+        <div class="details-pane" id="comp-arch">
+          <h3 class="details-title">ARCH <span>Mission Tasks</span></h3>
+          <p class="details-desc">The Australian Rover Challenge evaluates rovers on their ability to perform science and exploration tasks in Australia's unique extraterrestrial-simulating landscapes.</p>
+          <ul class="details-list">
+            <li><span>✦</span> <strong>Sample Collection:</strong> Navigate to designated sites, collect geological samples and return them for analysis</li>
+            <li><span>✦</span> <strong>Terrain Traversal:</strong> Complete obstacle courses simulating rocky, sandy, and sloped Martian terrain</li>
+            <li><span>✦</span> <strong>Equipment Maintenance:</strong> Operate tools and equipment using a robotic manipulator arm</li>
+            <li><span>✦</span> <strong>Autonomous Operations:</strong> Perform waypoint navigation and object detection without operator control</li>
+          </ul>
+        </div>
+
+        <div class="details-pane" id="comp-erc">
+          <h3 class="details-title">ERC <span>Mission Tasks</span></h3>
+          <p class="details-desc">The European Rover Challenge combines a competitive Mars rover event with a prestigious science congress, held annually in Poland.</p>
+          <ul class="details-list">
+            <li><span>✦</span> <strong>Science Task:</strong> Perform on-site geological and biological analysis of terrain samples for habitability indicators</li>
+            <li><span>✦</span> <strong>Maintenance Task:</strong> Interact with an equipment panel — press buttons, plug connectors, measure readings</li>
+            <li><span>✦</span> <strong>Collection Task:</strong> Retrieve objects dispersed across the Mars Yard and transport them to base stations</li>
+            <li><span>✦</span> <strong>Probing &amp; Navigation:</strong> Navigate autonomously while scanning terrain and avoiding hazards</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo"><img src="assets/logo.png" alt="Ad Astra"><span class="nav-logo-text">AD ASTRA</span></a>
+          <p>A student-run multidisciplinary team from Sri Sairam Institutions, Chennai, building Mars rovers.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/teamadastra/" target="_blank" class="social-link"><svg width="18"
+                height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg></a>
+            <a href="https://www.linkedin.com/company/ad-astra-rover-team/" target="_blank" class="social-link"><svg
+                width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg></a>
+            <a href="https://www.youtube.com/@teamadastra" target="_blank" class="social-link"><svg width="18"
+                height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html#about">About Us</a><a href="subsystems.html">Subsystems</a><a
+            href="competitions.html">Competitions</a><a href="team.html">Our Team</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compete</h4><a href="https://urc.marssociety.org/home/about-urc" target="_blank">URC</a><a
+            href="https://roverchallenge.org/" target="_blank">IRC</a><a
+            href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" target="_blank">ARC</a><a
+            href="https://roverchallenge.eu/en/erc-robotics-competition/" target="_blank">ERC</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4><a href="mailto:adastraroverteam@gmail.com">adastraroverteam@gmail.com</a><a
+            href="tel:+917530085108">+91 7530085108</a><a href="#">Sri Sairam Institutions</a><a href="#">Chennai,
+            India</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Team Ad Astra. All Rights Reserved.</p>
+        <div class="footer-bottom-links"><a href="index.html">To the Stars, Through Hardships ✦</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Main Script -->
+  <script src="script.js?v=4"></script>
+</body>
+</html>

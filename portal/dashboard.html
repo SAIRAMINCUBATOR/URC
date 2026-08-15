@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — AD ASTRA Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logo.png" type="image/png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="portal.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body class="portal-body">
+
+<canvas id="star-canvas"></canvas>
+
+<!-- TOP NAV -->
+<nav class="portal-nav">
+  <div class="portal-nav-inner">
+    <div class="portal-nav-brand">
+      <img src="../assets/logo.png" alt="Ad Astra">
+      <span>AD ASTRA</span>
+      <span class="portal-nav-tag">Team Portal</span>
+    </div>
+    <div class="portal-nav-right">
+      <span class="portal-role-badge" id="roleBadge">—</span>
+      <span class="portal-user-chip" id="userChip">Loading...</span>
+      <button class="btn-ghost" onclick="signOut()">Log Out</button>
+    </div>
+  </div>
+</nav>
+
+<!-- FORCE PASSWORD CHANGE OVERLAY -->
+<div class="auth-wrap" id="pwChangeOverlay" style="display:none; position:fixed; inset:0; z-index:5000; background:rgba(5,5,8,0.92); backdrop-filter:blur(10px);">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="../assets/logo.png" alt="Ad Astra">
+      <span class="auth-logo-text">AD ASTRA</span>
+    </div>
+    <div class="auth-subtitle">Set Your New Password</div>
+    <div class="auth-error" id="pwError"></div>
+    <form id="pwChangeForm">
+      <div class="form-group">
+        <label>New Password</label>
+        <input type="password" id="newPassword" placeholder="At least 8 characters" minlength="8" required>
+      </div>
+      <div class="form-group">
+        <label>Confirm New Password</label>
+        <input type="password" id="confirmPassword" placeholder="Re-enter password" minlength="8" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Set Password & Continue</button>
+    </form>
+    <div class="auth-hint">This is your first login. You must set a new password before accessing the portal. No-one cannot see this password once set.</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="portal-main">
+
+  <div class="portal-section-title" id="greeting">Welcome</div>
+  <div class="portal-section-sub" id="dateToday"></div>
+
+  <div class="stat-row" id="statRow"></div>
+
+  <div class="portal-tabs" id="tabBar">
+    <button class="portal-tab active" data-tab="attendance">Attendance</button>
+    <button class="portal-tab" data-tab="documents">My Documents</button>
+    <button class="portal-tab" data-tab="approvals" id="approvalsTabBtn" style="display:none;">Pending Approvals</button>
+    <button class="portal-tab" data-tab="meetings">Knowledge Sharing</button>
+    <button class="portal-tab" data-tab="odmanage" id="odManageTabBtn" style="display:none;">Team Overview</button>
+  </div>
+
+  <!-- ATTENDANCE TAB -->
+  <div class="portal-panel active" id="panel-attendance">
+
+    <div class="p-card" id="activeOdCard" style="display:none;">
+      <h3>Active / Upcoming OD Periods</h3>
+      <div id="odPeriodsList"><div class="empty-state">Loading...</div></div>
+    </div>
+
+    <div class="p-card">
+      <h3>Self-Initiative Attendance</h3>
+      <div class="portal-section-sub" style="margin-bottom:16px;">Mark this only if you're coming in on a regular day, not during a declared OD.</div>
+      <form id="attendanceForm">
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="attDate" required>
+        </div>
+
+        <div class="upload-zone">
+          <label style="display:block; font-family: var(--font-mono); font-size:.72rem; letter-spacing:1px; text-transform:uppercase; color: var(--accent-light); margin-bottom:10px;">
+            Report required — describe what you worked on
+          </label>
+          <input type="file" id="reportFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top:16px;">Mark Present</button>
+      </form>
+    </div>
+
+    <div class="p-card">
+      <h3>My Attendance History</h3>
+      <div id="myAttendanceList"><div class="empty-state">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- OD DOCUMENT MODAL (lightweight inline form, shown when marking present for an OD) -->
+  <div class="p-card" id="odUploadCard" style="display:none;">
+    <h3 id="odUploadTitle">Upload OD Document</h3>
+    <div class="upload-zone">
+      <label style="display:block; font-family: var(--font-mono); font-size:.72rem; letter-spacing:1px; text-transform:uppercase; color: var(--accent-light); margin-bottom:10px;">
+        One document covering everything you did during this OD period
+      </label>
+      <input type="file" id="odReportFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+    </div>
+    <div style="display:flex; gap:12px; margin-top:16px;">
+      <button class="btn btn-primary" onclick="submitOdAttendance()">Submit</button>
+      <button class="btn-ghost" onclick="closeOdUpload()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- DOCUMENTS TAB -->
+  <div class="portal-panel" id="panel-documents">
+    <div class="p-card">
+      <h3>My Uploaded Documents</h3>
+      <div id="myDocsList"><div class="empty-state">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- APPROVALS TAB (captain / sub_team_lead only) -->
+  <div class="portal-panel" id="panel-approvals">
+    <div class="p-card">
+      <h3>Pending Attendance Approvals</h3>
+      <div id="pendingApprovalsList"><div class="empty-state">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- KNOWLEDGE SHARING TAB (everyone sees, captain gets a form too) -->
+  <div class="portal-panel" id="panel-meetings">
+    <div class="p-card" id="scheduleMeetingCard" style="display:none;">
+      <h3>Schedule a Knowledge Sharing Meeting</h3>
+      <form id="meetingForm">
+        <div class="form-group">
+          <label>Subsystem</label>
+          <select id="meetingSubTeam" required>
+            <option value="">Loading subsystems...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Topic</label>
+          <input type="text" id="meetingTopic" placeholder="e.g. Intro to ROS Navigation Stack" required>
+        </div>
+        <div class="form-group">
+          <label>Presenter Name</label>
+          <input type="text" id="meetingPresenter" placeholder="Who's presenting" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" id="meetingDate" required>
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <input type="time" id="meetingTime" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:16px;">Schedule Meeting</button>
+      </form>
+    </div>
+
+    <div class="p-card">
+      <h3>Upcoming Knowledge Sharing Sessions</h3>
+      <div id="meetingsList"><div class="empty-state">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- DECLARE OD + TEAM OVERVIEW TAB (captain only) -->
+  <div class="portal-panel" id="panel-odmanage">
+    <div class="p-card">
+      <h3>Download Attendance Report</h3>
+      <div class="portal-section-sub" style="margin-bottom:16px;">Generates a PDF summary of every member's attendance within the selected range.</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>From</label>
+          <input type="date" id="reportStart" required>
+        </div>
+        <div class="form-group">
+          <label>To</label>
+          <input type="date" id="reportEnd" required>
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="generateReport()">Download Report (PDF)</button>
+    </div>
+
+    <div class="p-card">
+      <h3>Declare a New OD Period</h3>
+      <form id="odForm">
+        <div class="form-group">
+          <label>Title / Reason</label>
+          <input type="text" id="odTitle" placeholder="e.g. IRC 2026 Onsite Round" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Start Date</label>
+            <input type="date" id="odStart" required>
+          </div>
+          <div class="form-group">
+            <label>End Date</label>
+            <input type="date" id="odEnd" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:16px;">Declare OD</button>
+      </form>
+    </div>
+
+    <div class="p-card">
+      <h3>All Declared OD Periods</h3>
+      <div id="allOdList"><div class="empty-state">Loading...</div></div>
+    </div>
+
+    <div class="p-card">
+      <h3>All Team Documents</h3>
+      <div id="allDocsList"><div class="empty-state">Loading...</div></div>
+    </div>
+  </div>
+
+</main>
+
+<script src="portal-config.js"></script>
+<script>
+let currentUser = null;
+let currentProfile = null;
+let pendingAttendanceId = null; // holds the attendance row awaiting a doc upload
+
+// ---------- INIT ----------
+(async function init() {
+  const session = await requireAuth();
+  if (!session) return;
+  currentUser = session.user;
+
+  const { data: profile, error } = await portalClient
+    .from("profiles")
+    .select("*")
+    .eq("id", currentUser.id)
+    .single();
+
+  if (error || !profile) {
+    showToast("Could not load profile. Contact your captain.", true);
+    return;
+  }
+  currentProfile = profile;
+
+  document.getElementById("userChip").textContent = profile.full_name || currentUser.email;
+  document.getElementById("roleBadge").textContent = profile.role.replace("_", " ");
+  document.getElementById("greeting").textContent = "Welcome, " + (profile.full_name || currentUser.email).split(" ")[0];
+  document.getElementById("dateToday").textContent = new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase();
+  document.getElementById("attDate").value = new Date().toISOString().split("T")[0];
+
+  if (profile.must_change_password) {
+    document.getElementById("pwChangeOverlay").style.display = "flex";
+  }
+
+  if (profile.role === "captain" || profile.role === "sub_team_lead") {
+    document.getElementById("approvalsTabBtn").style.display = "block";
+  }
+  if (profile.role === "captain") {
+    document.getElementById("odManageTabBtn").style.display = "block";
+    document.getElementById("scheduleMeetingCard").style.display = "block";
+    populateSubTeamDropdown();
+  }
+
+  loadStats();
+  loadMyAttendance();
+  loadMyDocuments();
+  loadActiveOdPeriods();
+  loadMeetings();
+})();
+
+// ---------- FORCE PASSWORD CHANGE ----------
+document.getElementById("pwChangeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const pw1 = document.getElementById("newPassword").value;
+  const pw2 = document.getElementById("confirmPassword").value;
+  const errBox = document.getElementById("pwError");
+  errBox.classList.remove("show");
+
+  if (pw1 !== pw2) {
+    errBox.textContent = "Passwords do not match.";
+    errBox.classList.add("show");
+    return;
+  }
+
+  const { error: updateError } = await portalClient.auth.updateUser({ password: pw1 });
+  if (updateError) {
+    errBox.textContent = updateError.message;
+    errBox.classList.add("show");
+    return;
+  }
+
+  const { error: flagError } = await portalClient
+    .from("profiles")
+    .update({ must_change_password: false })
+    .eq("id", currentUser.id);
+
+  if (flagError) {
+    errBox.textContent = "Password set, but failed to update status: " + flagError.message;
+    errBox.classList.add("show");
+    return;
+  }
+
+  document.getElementById("pwChangeOverlay").style.display = "none";
+  showToast("Password updated successfully.");
+});
+
+// ---------- TABS ----------
+document.querySelectorAll(".portal-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".portal-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".portal-panel").forEach(p => p.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById("panel-" + tab.dataset.tab).classList.add("active");
+    if (tab.dataset.tab === "approvals") loadPendingApprovals();
+    if (tab.dataset.tab === "odmanage") { loadAllOdPeriods(); loadAllDocuments(); }
+    if (tab.dataset.tab === "meetings") loadMeetings();
+  });
+});
+
+// ---------- SUBMIT SELF-INITIATIVE ATTENDANCE ----------
+document.getElementById("attendanceForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const date = document.getElementById("attDate").value;
+  const fileInput = document.getElementById("reportFile");
+
+  if (!fileInput.files[0]) {
+    showToast("A report is required for self-initiative attendance.", true);
+    return;
+  }
+
+  const { data, error } = await portalClient
+    .from("attendance")
+    .insert({ user_id: currentUser.id, date, type: "self_initiative" })
+    .select()
+    .single();
+
+  if (error) {
+    showToast("Failed to mark attendance: " + error.message, true);
+    return;
+  }
+
+  showToast("Attendance marked for " + formatDate(date) + ".");
+  await uploadReport(data.id, fileInput.files[0]);
+
+  document.getElementById("attendanceForm").reset();
+  document.getElementById("attDate").value = new Date().toISOString().split("T")[0];
+
+  loadMyAttendance();
+  loadMyDocuments();
+  loadStats();
+});
+
+async function uploadReport(attendanceId, file) {
+  const { data: { session } } = await portalClient.auth.getSession();
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("attendance_id", attendanceId);
+
+  showToast("Uploading report...");
+
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/upload-document`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${session.access_token}` },
+    body: formData,
+  });
+
+  const result = await res.json();
+  if (!res.ok) {
+    showToast("Report upload failed: " + (result.error || "unknown error"), true);
+    return;
+  }
+  showToast("Report uploaded successfully.");
+}
+
+// ---------- ACTIVE OD PERIODS (member view) ----------
+let odBeingMarked = null;
+
+async function loadActiveOdPeriods() {
+  const card = document.getElementById("activeOdCard");
+  const el = document.getElementById("odPeriodsList");
+
+  // Show ODs from today onwards, or ones ending in the last 7 days (late uploads)
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 7);
+  const cutoffStr = cutoff.toISOString().split("T")[0];
+
+  const { data: ods, error } = await portalClient
+    .from("od_periods")
+    .select("id, title, start_date, end_date")
+    .gte("end_date", cutoffStr)
+    .order("start_date", { ascending: true });
+
+  if (error || !ods || !ods.length) {
+    card.style.display = "none";
+    return;
+  }
+
+  // Check which ones this member has already marked
+  const { data: mine } = await portalClient
+    .from("attendance")
+    .select("od_period_id")
+    .eq("user_id", currentUser.id)
+    .eq("type", "od");
+
+  const markedIds = new Set((mine || []).map(r => r.od_period_id));
+
+  card.style.display = "block";
+  el.innerHTML = ods.map(od => `
+    <div class="p-row">
+      <div class="p-row-main">
+        <div class="p-row-title">${od.title}</div>
+        <div class="p-row-sub">${formatDate(od.start_date)} — ${formatDate(od.end_date)}</div>
+      </div>
+      <div class="p-row-actions">
+        ${markedIds.has(od.id)
+          ? `<span class="status-pill approved">Marked</span>`
+          : `<button class="btn btn-primary btn-sm" onclick="openOdUpload('${od.id}', '${od.title.replace(/'/g, "\\'")}')">Mark Present</button>`
+        }
+      </div>
+    </div>
+  `).join("");
+}
+
+function openOdUpload(odId, title) {
+  odBeingMarked = odId;
+  document.getElementById("odUploadTitle").textContent = "Upload Document — " + title;
+  document.getElementById("odUploadCard").style.display = "block";
+  document.getElementById("odUploadCard").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function closeOdUpload() {
+  odBeingMarked = null;
+  document.getElementById("odReportFile").value = "";
+  document.getElementById("odUploadCard").style.display = "none";
+}
+
+async function submitOdAttendance() {
+  const fileInput = document.getElementById("odReportFile");
+  if (!fileInput.files[0]) {
+    showToast("Please attach a document covering this OD period.", true);
+    return;
+  }
+  if (!odBeingMarked) return;
+
+  const { data, error } = await portalClient
+    .from("attendance")
+    .insert({ user_id: currentUser.id, type: "od", od_period_id: odBeingMarked })
+    .select()
+    .single();
+
+  if (error) {
+    showToast("Failed to mark OD attendance: " + error.message, true);
+    return;
+  }
+
+  await uploadReport(data.id, fileInput.files[0]);
+  showToast("OD attendance submitted.");
+
+  closeOdUpload();
+  loadActiveOdPeriods();
+  loadMyAttendance();
+  loadMyDocuments();
+  loadStats();
+}
+
+// ---------- DECLARE OD (captain only) ----------
+document.getElementById("odForm")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const title = document.getElementById("odTitle").value.trim();
+  const start_date = document.getElementById("odStart").value;
+  const end_date = document.getElementById("odEnd").value;
+
+  if (new Date(end_date) < new Date(start_date)) {
+    showToast("End date can't be before start date.", true);
+    return;
+  }
+
+  const { error } = await portalClient
+    .from("od_periods")
+    .insert({ title, start_date, end_date, created_by: currentUser.id });
+
+  if (error) {
+    showToast("Failed to declare OD: " + error.message, true);
+    return;
+  }
+
+  showToast("OD period declared.");
+  document.getElementById("odForm").reset();
+  loadAllOdPeriods();
+  loadActiveOdPeriods();
+});
+
+async function loadAllOdPeriods() {
+  const el = document.getElementById("allOdList");
+  const { data, error } = await portalClient
+    .from("od_periods")
+    .select("id, title, start_date, end_date")
+    .order("start_date", { ascending: false });
+
+  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
+  if (!data.length) { el.innerHTML = `<div class="empty-state">No OD periods declared yet.</div>`; return; }
+
+  el.innerHTML = data.map(od => `
+    <div class="p-row">
+      <div class="p-row-main">
+        <div class="p-row-title">${od.title}</div>
+        <div class="p-row-sub">${formatDate(od.start_date)} — ${formatDate(od.end_date)}</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+async function loadAllDocuments() {
+  const el = document.getElementById("allDocsList");
+  el.innerHTML = `<div class="empty-state">Loading...</div>`;
+
+  const { data, error } = await portalClient
+    .from("documents")
+    .select("id, file_name, uploaded_at, user_id, profiles!documents_user_id_fkey(full_name), attendance(type, date, od_periods(title))")
+    .order("uploaded_at", { ascending: false });
+
+  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
+  if (!data.length) { el.innerHTML = `<div class="empty-state">No documents uploaded yet.</div>`; return; }
+
+  el.innerHTML = data.map(doc => {
+    const name = doc.profiles?.full_name || "Unknown member";
+    const att = doc.attendance;
+    const typeLabel = att
+      ? (att.type === "od" ? (att.od_periods?.title || "OD") : "Self-Initiative")
+      : "";
+    const uploadedAt = new Date(doc.uploaded_at).toLocaleString(undefined, {
+      day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+    return `
+      <div class="p-row">
+        <div class="p-row-main">
+          <div class="p-row-title">${name} — ${doc.file_name || "Report"}</div>
+          <div class="p-row-sub">${typeLabel} • ${uploadedAt}</div>
+        </div>
+        <div class="p-row-actions">
+          <span class="doc-link" style="cursor:pointer;" onclick="viewDocument('${doc.id}')">View</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ---------- MY ATTENDANCE HISTORY ----------
+async function loadMyAttendance() {
+  const el = document.getElementById("myAttendanceList");
+  const { data, error } = await portalClient
+    .from("attendance")
+    .select("id, date, type, approved, od_periods(title, start_date, end_date)")
+    .eq("user_id", currentUser.id)
+    .order("created_at", { ascending: false })
+    .limit(20);
+
+  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
+  if (!data.length) { el.innerHTML = `<div class="empty-state">No attendance records yet. Mark your first one above.</div>`; return; }
+
+  el.innerHTML = data.map(row => {
+    const isOd = row.type === "od";
+    const label = isOd
+      ? (row.od_periods ? `${row.od_periods.title} (${formatDate(row.od_periods.start_date)} — ${formatDate(row.od_periods.end_date)})` : "OD")
+      : formatDate(row.date);
+    return `
+      <div class="p-row">
+        <div class="p-row-main">
+          <div class="p-row-title">${label}</div>
+          <div class="p-row-sub">${row.approved ? "Approved" : "Awaiting approval"}</div>
+        </div>
+        <div class="p-row-actions">
+          <span class="status-pill ${isOd ? 'od' : 'present'}">${isOd ? "OD" : "Self-Initiative"}</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ---------- MY DOCUMENTS ----------
+async function loadMyDocuments() {
+  const el = document.getElementById("myDocsList");
+  const { data, error } = await portalClient
+    .from("documents")
+    .select("id, file_name, uploaded_at, file_url, attendance_id, attendance(date, type, od_periods(title))")
+    .eq("user_id", currentUser.id)
+    .order("uploaded_at", { ascending: false });
+
+  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
+  if (!data.length) { el.innerHTML = `<div class="empty-state">You haven't uploaded any documents yet.</div>`; return; }
+
+  el.innerHTML = data.map(doc => {
+    const att = doc.attendance;
+    const label = att
+      ? (att.type === "od" ? (att.od_periods?.title || "OD") + " (OD)" : formatDate(att.date) + " (Self-Initiative)")
+      : "";
+    return `
+      <div class="p-row">
+        <div class="p-row-main">
+          <div class="p-row-title">${doc.file_name || "Report"}</div>
+          <div class="p-row-sub">${label}</div>
+        </div>
+        <div class="p-row-actions">
+          <span class="doc-link" style="cursor:pointer;" onclick="viewDocument('${doc.id}')">View</span>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+// ---------- PENDING APPROVALS (captain / sub_team_lead) ----------
+async function loadPendingApprovals() {
+  const el = document.getElementById("pendingApprovalsList");
+  el.innerHTML = `<div class="empty-state">Loading...</div>`;
+
+  const { data, error } = await portalClient
+    .from("attendance")
+    .select("id, date, type, user_id, profiles!attendance_user_id_fkey(full_name), documents(id,file_url, file_name), od_periods(title, start_date, end_date)")
+    .eq("approved", false)
+    .order("created_at", { ascending: false });
+
+  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
+  if (!data.length) { el.innerHTML = `<div class="empty-state">No pending approvals right now.</div>`; return; }
+
+  el.innerHTML = data.map(row => {
+    const name = row.profiles?.full_name || "Unknown member";
+    const doc = row.documents?.[0];
+    const isOd = row.type === "od";
+    const dateLabel = isOd
+      ? (row.od_periods ? `${row.od_periods.title} (${formatDate(row.od_periods.start_date)} — ${formatDate(row.od_periods.end_date)})` : "OD")
+      : formatDate(row.date);
+    return `
+      <div class="p-row">
+        <div class="p-row-main">
+          <div class="p-row-title">${name} — ${dateLabel}</div>
+          <span class="doc-link" style="cursor:pointer;" onclick="viewDocument('${doc.id}')">View report</span>
+        </div>
+        <div class="p-row-actions">
+          <span class="status-pill ${isOd ? 'od' : 'present'}">${isOd ? "OD" : "Self-Initiative"}</span>
+          <button class="btn btn-primary btn-sm" onclick="approveAttendance('${row.id}')">Approve</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+async function approveAttendance(attendanceId) {
+  const { error } = await portalClient
+    .from("attendance")
+    .update({ approved: true, approved_by: currentUser.id, approved_at: new Date().toISOString() })
+    .eq("id", attendanceId);
+
+  if (error) { showToast("Approval failed: " + error.message, true); return; }
+  showToast("Attendance approved.");
+  loadPendingApprovals();
+  loadStats();
+}
+
+// ---------- STATS ----------
+async function loadStats() {
+  const el = document.getElementById("statRow");
+  const { data: mine } = await portalClient
+    .from("attendance")
+    .select("type, approved")
+    .eq("user_id", currentUser.id);
+
+  const total = mine?.length || 0;
+  const selfCount = mine?.filter(r => r.type === "self_initiative").length || 0;
+  const odCount = mine?.filter(r => r.type === "od").length || 0;
+  const pendingMine = mine?.filter(r => !r.approved).length || 0;
+
+  let statsHtml = `
+    <div class="pstat-card"><div class="pstat-num">${total}</div><div class="pstat-label">Total Records</div></div>
+    <div class="pstat-card"><div class="pstat-num">${selfCount}</div><div class="pstat-label">Self-Initiative</div></div>
+    <div class="pstat-card"><div class="pstat-num">${odCount}</div><div class="pstat-label">OD Attended</div></div>
+    <div class="pstat-card"><div class="pstat-num">${pendingMine}</div><div class="pstat-label">Awaiting Approval</div></div>
+  `;
+
+  if (currentProfile.role === "captain" || currentProfile.role === "sub_team_lead") {
+    const { count: allPendingCount } = await portalClient
+      .from("attendance")
+      .select("id", { count: "exact", head: true })
+      .eq("approved", false);
+    statsHtml += `<div class="pstat-card"><div class="pstat-num">${allPendingCount ?? 0}</div><div class="pstat-label">Team Pending Approvals</div></div>`;
+  }
+
+  el.innerHTML = statsHtml;
+}
+
+// ---------- ATTENDANCE REPORT (captain only) ----------
+async function generateReport() {
+  const startDate = document.getElementById("reportStart").value;
+  const endDate = document.getElementById("reportEnd").value;
+
+  if (!startDate || !endDate) {
+    showToast("Please select both a start and end date.", true);
+    return;
+  }
+  if (new Date(endDate) < new Date(startDate)) {
+    showToast("End date can't be before start date.", true);
+    return;
+  }
+
+  showToast("Generating report...");
+
+  // Get every member
+  const { data: members, error: memberError } = await portalClient
+    .from("profiles")
+    .select("id, full_name, role")
+    .order("full_name", { ascending: true });
+
+  if (memberError) { showToast("Failed to load members: " + memberError.message, true); return; }
+
+  // Get all attendance in range, joined with OD period dates for overlap checks
+  const { data: records, error: recError } = await portalClient
+    .from("attendance")
+    .select("user_id, date, type, approved, od_periods(start_date, end_date)");
+
+  if (recError) { showToast("Failed to load attendance: " + recError.message, true); return; }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const inRange = (records || []).filter(r => {
+    if (r.type === "self_initiative") {
+      const d = new Date(r.date);
+      return d >= start && d <= end;
+    }
+    if (r.type === "od" && r.od_periods) {
+      const odStart = new Date(r.od_periods.start_date);
+      const odEnd = new Date(r.od_periods.end_date);
+      return odStart <= end && odEnd >= start; // overlaps the selected range
+    }
+    return false;
+  });
+
+  const rows = members.map(m => {
+    const mine = inRange.filter(r => r.user_id === m.id);
+    const selfDays = mine.filter(r => r.type === "self_initiative" && r.approved).length;
+    const odCount = mine.filter(r => r.type === "od" && r.approved).length;
+    const pending = mine.filter(r => !r.approved).length;
+    return [m.full_name || "—", selfDays, odCount, pending];
+  });
+
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
+
+  pdf.setFontSize(16);
+  pdf.text("AD ASTRA — Attendance Report", 14, 18);
+  pdf.setFontSize(10);
+  pdf.text(`Period: ${formatDate(startDate)} to ${formatDate(endDate)}`, 14, 26);
+  pdf.text(`Generated: ${new Date().toLocaleString()}`, 14, 32);
+
+  pdf.autoTable({
+    startY: 40,
+    head: [["Member", "Self-Initiative Days", "OD Periods Attended", "Pending Approvals"]],
+    body: rows,
+    styles: { fontSize: 9 },
+    headStyles: { fillColor: [232, 122, 45] },
+  });
+
+  pdf.save(`ad-astra-attendance-${startDate}-to-${endDate}.pdf`);
+  showToast("Report downloaded.");
+}
+
+// ---------- KNOWLEDGE SHARING MEETINGS ----------
+async function populateSubTeamDropdown() {
+  const select = document.getElementById("meetingSubTeam");
+  const { data, error } = await portalClient
+    .from("profiles")
+    .select("sub_team")
+    .not("sub_team", "is", null);
+
+  if (error || !data) {
+    select.innerHTML = `<option value="">Failed to load subsystems</option>`;
+    return;
+  }
+
+  const unique = [...new Set(data.map(r => r.sub_team).filter(Boolean))].sort();
+  select.innerHTML = unique.length
+    ? unique.map(st => `<option value="${st}">${st}</option>`).join("")
+    : `<option value="">No subsystems found — assign sub_team to profiles first</option>`;
+}
+
+document.getElementById("meetingForm")?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const sub_team = document.getElementById("meetingSubTeam").value;
+  const topic = document.getElementById("meetingTopic").value.trim();
+  const presenter_name = document.getElementById("meetingPresenter").value.trim();
+  const meeting_date = document.getElementById("meetingDate").value;
+  const meeting_time = document.getElementById("meetingTime").value;
+
+  if (!sub_team) {
+    showToast("Please select a subsystem.", true);
+    return;
+  }
+
+  const { error } = await portalClient
+    .from("meetings")
+    .insert({ sub_team, topic, presenter_name, meeting_date, meeting_time, created_by: currentUser.id });
+
+  if (error) {
+    showToast("Failed to schedule meeting: " + error.message, true);
+    return;
+  }
+
+  showToast("Meeting scheduled.");
+  document.getElementById("meetingForm").reset();
+  loadMeetings();
+});
+
+async function loadMeetings() {
+  const el = document.getElementById("meetingsList");
+  el.innerHTML = `<div class="empty-state">Loading...</div>`;
+
+  const { data, error } = await portalClient
+    .from("meetings")
+    .select("id, sub_team, topic, presenter_name, meeting_date, meeting_time")
+    .order("meeting_date", { ascending: true })
+    .order("meeting_time", { ascending: true });
+
+  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
+  if (!data.length) { el.innerHTML = `<div class="empty-state">No knowledge sharing meetings scheduled yet.</div>`; return; }
+
+  el.innerHTML = data.map(m => `
+    <div class="p-row">
+      <div class="p-row-main">
+        <div class="p-row-title">${m.topic}</div>
+        <div class="p-row-sub">${m.sub_team} — presented by ${m.presenter_name}</div>
+      </div>
+      <div class="p-row-actions">
+        <span class="status-pill od">${formatDate(m.meeting_date)}, ${formatTime(m.meeting_time)}</span>
+      </div>
+    </div>
+  `).join("");
+}
+
+function formatTime(t) {
+  const [h, m] = t.split(":");
+  const hour = parseInt(h, 10);
+  const period = hour >= 12 ? "PM" : "AM";
+  const hour12 = hour % 12 || 12;
+  return `${hour12}:${m} ${period}`;
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+
+async function viewDocument(docId) {
+  const { data: { session } } = await portalClient.auth.getSession();
+  const url = `${SUPABASE_URL}/functions/v1/get-document?id=${docId}&token=${session.access_token}`;
+  window.location.href = url;
+}
+
+</script>
+
+</body>
+</html>

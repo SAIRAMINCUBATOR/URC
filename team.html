@@ -1,877 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
-   
-    <head>
-        <meta charset="utf-8">
-        <title>AD ASTRA ROVER</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Driven by Curiosity,Powered by Innovation" name="keywords">
-        <meta content="Driven by Curiosity,Powered by Innovation" name="description">
-    
-        <!-- Favicon -->
-        <link href="img/logo.png" rel="icon" >
-    
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-    
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        
-    </head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description"
+    content="Team Ad Astra — A student-run multidisciplinary rover team from Sri Sairam Institutions, Chennai. Designing Mars rovers to explore the Red Planet.">
+  <title>AD ASTRA — To the Stars, Through Hardships</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner"></div>
+
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-rover">
+      <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="15" width="60" height="25" rx="5" fill="#E87A2D" opacity="0.8" />
+        <rect x="35" y="5" width="20" height="15" rx="3" fill="#E87A2D" opacity="0.6" />
+        <line x1="45" y1="5" x2="45" y2="0" stroke="#E87A2D" stroke-width="2" />
+        <rect x="42" y="-3" width="6" height="5" rx="1" fill="#E87A2D" opacity="0.7" />
+        <line x1="80" y1="25" x2="95" y2="20" stroke="#E87A2D" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="95" y1="20" x2="105" y2="28" stroke="#E87A2D" stroke-width="2" stroke-linecap="round" />
+        <circle cx="25" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="25" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="55" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="55" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="80" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="80" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <line x1="25" y1="40" x2="35" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+        <line x1="55" y1="40" x2="65" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+      </svg>
     </div>
-    <!-- Spinner End -->
-
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>SAIRAM INSTITUTIONS,</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>Chennai, INDIA</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>adastraroverteam@gmail.com</small>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
-                </div>
-            </div>
-        </div>
+    <div class="preloader-text">AD ASTRA</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
     </div>
-    <!-- Topbar End -->
+  </div>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <img class="img-fluid rounded" src="img/logo-color.jpg" style="width: 100px; height: 100px; clip-path: circle();" >
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="irc.html" class="nav-item nav-link ">IRC</a>
-                    <a href="about.html" class="nav-item nav-link ">About</a>
-                    <a href="projects.html" class="nav-item nav-link">Projects</a>
-                    <a href="blog.html" class="nav-item nav-link">Gallery</a>
-                    <a href="team.html" class="nav-item nav-link active">Team</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-            </div>
-        </nav>
+  <!-- STAR CANVAS -->
+  <canvas id="star-canvas"></canvas>
 
-        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-            <div class="row py-5">
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Our Team</h1>
-                    <a href="" class="h5 text-white">Our</a>
-                    
-                    <a href="" class="h5 text-white">Strength</a>
-                </div>
-            </div>
-        </div>
+    <!-- SPACE & ROVER ELEMENTS -->
+  <div class="parallax-dust">
+  <div class="space-asset satellite-1">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M40 30L60 30L60 70L40 70Z M20 40L40 40L40 60L20 60Z M60 40L80 40L80 60L60 60Z M48 20L52 20L52 30L48 30Z M48 70L52 70L52 80L48 80Z"
+        fill="rgba(232,122,45,0.15)" />
+      <circle cx="50" cy="50" r="4" fill="var(--accent)" />
+    </svg>
+  </div>
+  <div class="space-asset drone-2">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 40L70 40L70 60L30 60Z M45 25L55 25L55 40L45 40Z M35 60L45 75L30 75Z M65 60L55 75L70 75Z"
+        fill="rgba(108,58,237,0.15)" />
+      <circle cx="25" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+      <circle cx="75" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+    </svg>
+  </div>
+  <div class="space-asset rock-3"></div>
+  <div class="space-asset rock-4"></div>
+  <div class="space-asset rock-5"></div>
+  <div class="space-asset rover-arm">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 80L30 80L30 60L50 60L50 40L70 40L70 20L80 20" fill="none" stroke="rgba(232,122,45,0.2)"
+        stroke-width="4" />
+      <circle cx="25" cy="80" r="5" fill="rgba(232,122,45,0.3)" />
+      <circle cx="50" cy="60" r="4" fill="rgba(232,122,45,0.3)" />
+      <circle cx="75" cy="20" r="6" fill="rgba(232,122,45,0.4)" />
+    </svg>
+  </div>
+  <div class="space-asset rock-6"></div>
+  <div class="space-asset rock-7"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Ad Astra Logo">
+        <span class="nav-logo-text">AD ASTRA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="subsystems.html">Subsystems</a>
+        <a href="competitions.html">Competitions</a>
+        <a href="team.html" class="active">Team</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal/login.html" class="nav-portal-link">Portal</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
-    <!-- Navbar End -->
+  </nav>
 
-
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(61, 28, 18, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a><a href="index.html#about">About</a><a href="subsystems.html">Subsystems</a>
+      <a href="competitions.html">Competitions</a><a href="team.html" class="active">Team</a><a href="achievements.html">Achievements</a><a
+        href="contact.html">Contact</a><a href="portal/login.html" class="nav-portal-link">Portal</a>
     </div>
-    <!-- Full Screen Search End -->
-    
-    
- <!-- Team Start -->
- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px; ">
-            <h5 class="fw-bold text-primary text-uppercase">Technical Support Team</h5>
-            <h1 class="mb-0">Try to be a rainbow in someone’s cloud.</h1>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/EEE_HOD.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">K Renganathan</h4>
-                        <p class="text-uppercase m-0">Professor- HOD [EIE] </p>
-                        <p class="text-uppercase m-0"><b >Power Electronics and Control Systems </b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/san.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">G Shanmugasundar </h4>
-                        <p class="text-uppercase m-0">Professor and Dean R&D </p>
-                        <p class="text-uppercase m-0"><b >Robotics and Mechatronics System Design </b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/swagathaMam.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">Swagatha Sarkar</h4>
-                        <p class="text-uppercase m-0">Professor- HOD [AIDS] </p>
-                        <p class="text-uppercase m-0"><b >AI and Communications </b> </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="row g-5">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/sam_austin.jpg" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">J Sam Austin</h4>
-                        <p class="text-uppercase m-0">Senior R&D Engineer</p>
-                        <p class="text-uppercase m-0"><b >Vehicle Dynamics</b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/jayanth.webp" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">S A Jayandan</h4>
-                        <p class="text-uppercase m-0">Senior Scientist</p>
-                        <p class="text-uppercase m-0"><b >Enviromental Microbiologist</b></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/muthu.png" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">A Muthuvel</h4>
-                        <p class="text-uppercase m-0">Senior Executive</p>
-                        <p class="text-uppercase m-0"><b >Business Management</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row g-5 justify-content-center mt-5">
-            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                <div class="team-item bg-light rounded overflow-hidden">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/dhanush_kumar.jpg" alt="" style="padding: 10%;">
-                    </div>
-                    <div class="text-center py-4">
-                        <h4 class="text-primary">Dhanush Kumar V</h4>
-                        <p class="text-uppercase m-0">Junior R&D</p>
-                        <p class="text-uppercase m-0"><b>Robotics and Automation</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Team End -->
-    <!-- Testimonial Start -->
-    <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">TEAM STRUCTURE</h5>
-                <h1 class="mb-0">Alone we can do little, together we can do so much.</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s"> -->
-                <!-- <div class="testimonial-item bg-light my-4">
-                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/sugi.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Sugunesh R</h4>
-                            <small class="text-uppercase">Program and Controls Head- <b>Captain</b></small>
-                        </div>
-                    </div> 
-                    <div class="pt-4 pb-5 px-5">
-                        <br>Expertise in PCB design, Sr. Fault Analyst in TECHYY, Projects: developed of electrical vehicle digital
-                        dashboard, ATV telemetry. Electrical team Captain in SAE BAJA International, Winner of Smart India
-                        Hackathon 2022(Hardware).
-                    </div>
-                </div> -->
-                <!-- <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/karthi.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Karthick Selvan A </h4>
-                            <small class="text-uppercase"> Artificial Intelligence Head- <b>Vice-captain-SIT</b></small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Expertise in AI-ML technology. Experience  in handling  Edge Computing Devices like Jetson nano , Raspberry Pi  Working Experience in AI projects like Autonomous Vehicle, Drone, UAV's. 
-                         Research Intern at Sri Sairam Techno Incubator Foundation. Worked as intern in VISION(AI) and InternShala(ISP).
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/Dhanush.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Dhanush Kumar V</h4>
-                            <small class="text-uppercase">Communication and Control System Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Expertise in AI-ML, Drone Technology,  Robotics and automation. Research Intern at Sairam
-                        Techno Incubator Foundation.
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/Santhosh.jpg" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Santhoshkumar M</h4>
-                            <small class="text-uppercase">Mechanical Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        <br><br>Expertise in parametric design, <br> Internship at KOBELCO India - Apprenticeship at wheels India limited -
-                        Design Team Leader -Dirt bike, SAE INDIA Member, ISHRAE Member.<br>
-                    </div>
-                </div> -->
-                <!-- <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/varun.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Varunapriyan K</h4>
-                            <small class="text-uppercase">Science Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        <br>Expertise in Machine Learning, Signal Processing, Drone Technology. Citizen Scientist at NASA - (IASC),
-                        Student member of Space & Satellite Professional International, Winner of Smart India Hackathon.
-                    </div>
-                </div> -->
-                <!-- <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/keerthi.png" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Keerthivasan R</h4>
-                            <small class="text-uppercase">Science Head</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        7 Members team who work from a non-technical standpoint, the Business sub-team is critical in
-                        shaping and supporting our team. Business liaison, logistics management, media and design, outreach
-                        coordination, and finance management are among our responsibilities.
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/Bharath.jpg" style="width: 100px; height: 100px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Bharath Kumar M R</h4>
-                            <small class="text-uppercase">Electricals Head- <b>Captain-SEC</b></small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        EV engineer, Battery engineer, Instrumentation & electronics engineer, PCB designer. Assessment of Contact Parameters of Semi-Elliptical 
-                        Soft Fingertips for Anthropomorphic Robotic 
-                        Grippers(research paper), member of Powertrain subsystem, space enthusiast.<br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Testimonial End -->
+  </div>
 
+<div style="height: 120px; width: 100%;"></div>
+  <!-- ===== TEAM ===== -->
+  <section class="section team" id="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Our Hierarchy</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">The Minds Behind the Machine</h2>
+        <p class="section-desc">United by a shared passion for exploring the unknown, organized for optimal innovation.</p>
+      </div>
 
-         <!-- Mech Start -->
+      <!-- FACULTY & TECHNICAL ADVISORS -->
+      <div class="advisors-section reveal">
+        <h3 class="advisors-title">Faculty &amp; Technical Advisors</h3>
+        <p class="advisors-subtitle">The guiding forces behind our engineering excellence</p>
+        <div class="advisors-grid">
+          <div class="advisor-card tilt-card">
+            <img src="assets/team/muthuvel.png" alt="A Muthuvel" class="advisor-photo">
+            <h4>A Muthuvel</h4>
+            <div class="advisor-role">Senior Executive</div>
+            <div class="advisor-domain">Business Management</div>
+          </div>
+          <div class="advisor-card tilt-card">
+            <img src="assets/team/sam_austin.jpg" alt="J Sam Austin" class="advisor-photo">
+            <h4>J Sam Austin</h4>
+            <div class="advisor-role">Senior R&amp;D Engineer</div>
+            <div class="advisor-domain">Vehicle Dynamics</div>
+          </div>
+          <div class="advisor-card tilt-card">
+            <img src="assets/team/dhanush_kumar.jpg" alt="G Shanmugasundar" class="advisor-photo">
+            <h4>Dhanush kumar V</h4>
+            <div class="advisor-role">Team Mentor</div>
+            <div class="advisor-domain">Communication &amp; Embedded</div>
+          </div>
+          <div class="advisor-card tilt-card">
+            <img src="assets/team/renganathan.png" alt="K Renganathan" class="advisor-photo">
+            <h4>Dr. K Renganathan</h4>
+            <div class="advisor-role">Professor &amp; HOD — EIE</div>
+            <div class="advisor-domain">Power Electronics &amp; Control Systems</div>
+          </div>
+          <div class="advisor-card tilt-card">
+            <img src="assets/team/swagatha.png" alt="Swagatha Sarkar" class="advisor-photo">
+            <h4>Dr. Swagatha Sarkar</h4>
+            <div class="advisor-role">Professor &amp; HOD — AI&amp;DS</div>
+            <div class="advisor-domain">AI &amp; Communications</div>
+          </div>
+        </div>
+      </div>
 
-        <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                    <h5 class="fw-bold text-primary text-uppercase">Mechanical Design</h5>
-                    <h1 class="mb-0">Built to conquer even the toughest terrain: The reliable Mechanical Subsystem powering successful exploration.</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/Santhosh.jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Santhoshkumar M</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Karthikeyan I</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Anish Thavas B</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/Arulpathi.jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Arulpathi V</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Viknesshwar A B</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Aswanth P L</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="section-header reveal" style="margin-top: 80px;">
+        <span class="section-label">Student Leadership</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Team Hierarchy</h2>
+        <p class="section-desc">The student leadership driving daily engineering, operations, and innovation.</p>
+      </div>
+
+      
+
+      <!-- ===== BATCH 2026 ===== -->
+      <div class="batch-panel active" id="batch-2026">
+        <div class="team-tree-desktop desktop-only">
+          <div class="tree-level tree-reveal">
+            <div class="team-card tree-node tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/vishnu.jpeg" alt="Vishnu Dev M" loading="lazy"></div><h4>Vishnu Dev M</h4><div class="role">Captain</div>
             </div>
-        </div> -->
-        <!-- Mech End -->
-
-                 <!-- AI Start -->
-                <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="container py-5">
-                        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                            <h5 class="fw-bold text-primary text-uppercase">Artificial intelligence</h5>
-                            <h1 class="mb-0">Navigating the unknown with intelligence and precision: The AI Subsystem leading the way.</h1>
-                        </div>
-                        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/karthi.png" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Karthick Selvan A</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Arvind_kumar.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Aravind Kumar V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Hemanth.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Hemanth Kumar C S</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Dhanashree photo.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">DhanaShree V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/DEEBAKNARAYAN.V.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Deebak Narayan V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Rathiksha .G.png" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Rathiksha G</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Sai Prasanna V</h4>
-                                    </div>
-                                </div>
-                            </div> <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/supriya.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Supriya V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Sanjay Dilip</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- AI End -->
+          </div>
+          <div class="tree-connector line-reveal"></div>
+          <div class="tree-level tree-reveal" style="transition-delay: 0.2s">
+            <div class="team-card tree-node tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/surya.jpeg" alt="Suryakant" loading="lazy"></div><h4>Suryakant</h4><div class="role">Vice Captain</div>
+            </div>
+          </div>
+          <div class="tree-branch tree-reveal" style="transition-delay: 0.4s"><div class="branch-vertical-start"></div><div class="branch-horizontal"></div><div class="branch-vertical-ends"><i></i><i></i><i></i></div></div>
+          <div class="tree-level tree-level-4 tree-reveal" style="transition-delay: 0.6s">
+            <div class="team-card tree-node tilt-card"><div class="team-avatar"><img src="assets/team/mem/harinikl.jpeg" alt="Harini K L" loading="lazy"></div><h4>Harini K L</h4><div class="role">Embedded Lead</div></div>
+            <div class="team-card tree-node tilt-card"><div class="team-avatar"><img src="assets/team/mem/jerom.jpeg" alt="Sanjay R" loading="lazy"></div><h4>Jerom</h4><div class="role">Mechanical Lead</div></div>
+            <div class="team-card tree-node tilt-card"><div class="team-avatar"><img src="assets/team/mem/vanishree.jpeg" alt="Sabari" loading="lazy"></div><h4>Vanishree</h4><div class="role">Media Lead</div></div>
+            <div class="team-card tree-node tilt-card"><div class="team-avatar"><img src="assets/team/mem/chaaru.jpeg" alt="Sabari" loading="lazy"></div><h4>Chaaru Sree</h4><div class="role">Science Lead</div></div>
+          </div>
+          <div class="tree-branch tree-reveal" style="transition-delay: 0.8s"><div class="branch-vertical-ends"><i></i><i></i><i></i></div><div class="branch-horizontal"></div><div class="branch-vertical-start" style="height: 20px;"></div></div>
+          <div class="tree-level tree-reveal" style="transition-delay: 1.0s">
+            <div class="team-card tree-node tilt-card"><div class="team-avatar"><img src="assets/team/mem/sakthi.jpeg" alt="Kabilnarayanan" loading="lazy"></div><h4>Sakthivel</h4><div class="role">Dev Lead</div></div>
+          </div>
+          <div class="tree-connector line-reveal" style="transition-delay: 1.2s"></div>
+          <div class="tree-level tree-level-members tree-reveal" style="transition-delay: 1.4s">
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Dinesh Raj P.png.jpeg" alt="Dinesh Raj" loading="lazy"></div>
+              <h4>Dinesh Raj</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/joshita.jpeg" alt="Joshita" loading="lazy"></div>
+              <h4>Joshita</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/inban.jpeg" alt="Inban" loading="lazy"></div>
+              <h4>Inban</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/harish.jpeg" alt="Harish" loading="lazy"></div>
+              <h4>Harish</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Nijandan S.jpg" alt="Nijandan" loading="lazy"></div>
+              <h4>Nijandan</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/ganesh ram.jpg" alt="Ganesh ram" loading="lazy"></div>
+              <h4>Ganesh ram</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/KabilNarayanan.png" alt="Kabilnarayanan" loading="lazy"></div>
+              <h4>Kabilnarayanan</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/LOGESH WARAN.png" alt="Logesh Waran" loading="lazy"></div>
+              <h4>Logesh Waran</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/1000053734.png" alt="Member" loading="lazy"></div>
+              <h4>Gurubaran</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Prasanna B T.png" alt="Prasanna B T" loading="lazy"></div>
+              <h4>Prasanna B T</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Saravanan J.jpg" alt="Saravanan J" loading="lazy"></div>
+              <h4>Saravanan J</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Shriram_V.jpg" alt="Shriram V" loading="lazy"></div>
+              <h4>Shriram V</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/SABARINATHS.jpeg" alt="Shriram V" loading="lazy"></div>
+              <h4>Sabarinath S</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/harini.png" alt="Shriram V" loading="lazy"></div>
+              <h4>Harini</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/sankar.jpeg" alt="Shriram V" loading="lazy"></div>
+              <h4>Sankar</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/maharishi.jpeg" alt="Shriram V" loading="lazy"></div>
+              <h4>Maharishi</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Mohammed yunus K.jpeg" alt="Shriram V" loading="lazy"></div>
+              <h4>Mohammed Yunus</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/TAMIL ARASAN B.jpg" alt="Shriram V" loading="lazy"></div>
+              <h4>Tamilarasan</h4>
+            </div>
+            
+            <!-- ===== 2027 batch ===== -->
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/AMIRTHA VARSHINI Y S .jpg" alt="Amirtha Varshini Y S" loading="lazy"></div>
+              <h4>Amirtha Varshini Y S</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/ANJANA J.png" alt="Anjana J" loading="lazy"></div>
+              <h4>Anjana J</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/AZIM FATHIMA.jpg" alt="Azim Fathima" loading="lazy"></div>
+              <h4>Azim Fathima</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/BENEDICT OFFERON A .JPG" alt="Benedict Offeron A" loading="lazy"></div>
+              <h4>Benedict Offeron A</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Deepika.png" alt="Deepika" loading="lazy"></div>
+              <h4>Deepika</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Dhanyashri.png" alt="Dhanyashri" loading="lazy"></div>
+              <h4>Dhanyashri</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Dinesh.jpeg" alt="Dinesh" loading="lazy"></div>
+              <h4>Dinesh</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Giriprasad.jpg" alt="Giriprasad" loading="lazy"></div>
+              <h4>Giriprasad</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/HARICHARAN P_MECHANICAL .jpeg" alt="Haricharan P" loading="lazy"></div>
+              <h4>Haricharan P</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Hem Prasad.png" alt="Hem Prasad" loading="lazy"></div>
+              <h4>Hem Prasad</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/IESWARYA.png" alt="Ieswarya" loading="lazy"></div>
+              <h4>Ieswarya</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/kabilan.png" alt="Kabilan" loading="lazy"></div>
+              <h4>Kabilan</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/KARTHIBAN.png" alt="Karthiban" loading="lazy"></div>
+              <h4>Karthiban</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/KARTHIK.png" alt="Karthik" loading="lazy"></div>
+              <h4>Karthik</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/KIRAN KUMAR.png" alt="Kiran Kumar" loading="lazy"></div>
+              <h4>Kiran Kumar</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Lithesh.png" alt="Lithesh" loading="lazy"></div>
+              <h4>Lithesh</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/M AGILAN.png" alt="M Agilan" loading="lazy"></div>
+              <h4>M Agilan</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Mahalakshmi.png" alt="Mahalakshmi" loading="lazy"></div>
+              <h4>Mahalakshmi</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/MANIESWARI M V .jpg" alt="Manieswari M V" loading="lazy"></div>
+              <h4>Manieswari M V</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Maniram H_Mechanical.jpeg" alt="Maniram H" loading="lazy"></div>
+              <h4>Maniram H</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/MUTHU KARTHICK K .jpeg" alt="Muthu Karthick K" loading="lazy"></div>
+              <h4>Muthu Karthick K</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/nandita.jpeg" alt="Nandita" loading="lazy"></div>
+              <h4>Nandita</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/PRAJITH HARICHARAN.png" alt="Prajith Haricharan" loading="lazy"></div>
+              <h4>Prajith Haricharan</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Pranesh.JPG" alt="Pranesh" loading="lazy"></div>
+              <h4>Pranesh</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/SAKTHIMURUGAN S.jpeg" alt="Sakthimurugan S" loading="lazy"></div>
+              <h4>Sakthimurugan S</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Samyuktha.png" alt="Samyuktha" loading="lazy"></div>
+              <h4>Samyuktha</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Santhosh kumar.jpeg" alt="Santhosh Kumar" loading="lazy"></div>
+              <h4>Santhosh Kumar</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Sricharan.jpg" alt="Sricharan" loading="lazy"></div>
+              <h4>Sricharan</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/SUCHITRA .png" alt="Suchitra" loading="lazy"></div>
+              <h4>Suchitra</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/SUSHANTH.png" alt="Sushanth" loading="lazy"></div>
+              <h4>Sushanth</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Tazim sheriff.R.jpg" alt="Tazim Sheriff.R" loading="lazy"></div>
+              <h4>Tazim Sheriff R</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/ViruthikaS.jpg" alt="Viruthikas" loading="lazy"></div>
+              <h4>Viruthika s</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/YASHWANTH RAAM SIVA.jpg" alt="Yashwanth Raam Siva" loading="lazy"></div>
+              <h4>Yashwanth Raam Siva</h4>
+            </div>
+            <div class="team-card tree-node member-card tilt-card">
+              <div class="team-avatar"><img src="assets/team/mem/Yogeshwar.jpeg" alt="Yogeshwar" loading="lazy"></div>
+              <h4>Yogeshwar</h4>
+            </div>
+          </div>
+        </div>
         
-                 <!-- ELec Start -->
-                
-                <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="container py-5">
-                        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                            <h5 class="fw-bold text-primary text-uppercase">Electricals And Electronics</h5>
-                            <h1 class="mb-0">Wired with precision and charged with intelligence:<br> The silent architects of progress, forging connections and powering possibilities.</h1>
-                        </div>
-                        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Bharath.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Bharath Kumar M</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Swathi K</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Ahisri M</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/SATHYA SAI RAM S_ELECTRONICS.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Sathya Sai Ram S</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/KIRUBAKARAN_ELECTRONICS.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Kirubakaran S</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/SHIVAKRISHNA V ELECTRONICS SUBSYSTEM.jpg.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Shivakrishna V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Hariharan.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Hariharan R</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/MITHRRAN_Elctronics.jpg.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Mithrran</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/K.Aakash ELECTRONICS.JPG" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Aakash K</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Janani D_ ELECTRONICS.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Janani D</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
-                <!-- elect End -->
-        <!-- Sci Start -->
 
-        <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                    <h5 class="fw-bold text-primary text-uppercase">Science</h5>
-                    <h1 class="mb-0">Unlocking the mysteries of the Red Planet: The Science Subsystem pioneering discovery beyond our world..</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/Keerthivasan R sci.jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Keerthivasan R</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/Tharunkumar. p - science and electrical team.jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Tharunkumar P</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/s-m-haripradosh (1).jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Hari Pradosh S M</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/KARTHICK A.png" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Karthick A</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/pon prakash k (science and electrical).png" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Pon Prakash K</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/Rupashri_K_R (1).jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Rupashri k R</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light my-4">
-                        <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                            <img class="img-fluid rounded" src="img/Danya_electronics.jpg" style="width: 100px; height: 100px;" >
-                            <div class="ps-4">
-                                <h4 class="text-primary mb-1">Danyashri Chandrasekharan</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Sci End -->
-                <!-- communication and control system Start -->
-                <!-- <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="container py-5">
-                        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                            <h5 class="fw-bold text-primary text-uppercase">Communication and Control systems</h5>
-                            <h1 class="mb-0">Empowering progress through intelligent communication and precise control, our systems redefine frontiers</h1>
-                        </div>
-                        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Dhanush.png" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Dhanush Kumar V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Deepak Rishi G.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Deepak Rishi G</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Vikash G</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Sriram Santhosh</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/KISHORE.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Kishore Kumar P</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Saptha Ghiri k </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Saptha rishi K </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Vishwa M.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Vishwa M </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Sathappan.jpg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Sathappan R M</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/Godwin joe V.A ELECTICAL _ SCIENCE.JPG" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Godwin joe V A</h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-item bg-light my-4">
-                                <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                                    <img class="img-fluid rounded" src="img/person_icon.jpeg" style="width: 100px; height: 100px;" >
-                                    <div class="ps-4">
-                                        <h4 class="text-primary mb-1">Vijay Bala V</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- communication and control systems End -->
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-            <h1 class="mb-0">Partners</h1>
-        </div>
-        <div class="container py-4 mb-4">
-            <div class="row g-4 justify-content-center align-items-center">
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vendor-1.jpg" alt="Partner 1" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vector-2.png" alt="Partner 2" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vendor-3.jpeg" alt="Partner 3" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/vendor-4.jpeg" alt="Partner 4" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center align-items-center mt-2">
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Altium_logo.png" alt="Altium" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Solidworks_logo.png" alt="Solidworks" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Vecmocon_logo.png" alt="Vecmocon" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-                <div class="col-lg-3 col-md-4 col-6 text-center">
-                    <img src="img/Ansys_logo.jpg" alt="Ansys" class="img-fluid" style="max-width: 150px; height: auto;">
-                </div>
-            </div>
-        </div>
+  <div class="team-grid-mobile mobile-only">
+ <div class="team-category reveal">
+  <h3 class="team-category-title">
+   Command
+  </h3>
+  <div class="leaders-grid">
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Vishnu Dev M" loading="lazy" src="assets/team/mem/vishnu.jpeg"/>
     </div>
-    <!-- Vendor End -->
+    <h4>
+     Vishnu Dev M
+    </h4>
+    <div class="role">
+     Captain
+    </div>
+   </div>
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Suryakant" loading="lazy" src="assets/team/mem/surya.jpeg"/>
+    </div>
+    <h4>
+     Suryakant
+    </h4>
+    <div class="role">
+     Vice Captain
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="team-category reveal">
+  <h3 class="team-category-title">
+   Subsystem Leads
+  </h3>
+  <div class="leaders-grid">
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Harini K L" loading="lazy" src="assets/team/mem/harinikl.jpeg"/>
+    </div>
+    <h4>
+     Harini K L
+    </h4>
+    <div class="role">
+     Embedded Lead
+    </div>
+   </div>
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Sanjay R" loading="lazy" src="assets/team/mem/jerom.jpeg"/>
+    </div>
+    <h4>
+     Jerom
+    </h4>
+    <div class="role">
+     Mechanical Lead
+    </div>
+   </div>
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Sabari" loading="lazy" src="assets/team/mem/vanishree.jpeg"/>
+    </div>
+    <h4>
+     Vanishree
+    </h4>
+    <div class="role">
+     Media Lead
+    </div>
+   </div>
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Sabari" loading="lazy" src="assets/team/mem/chaaru.jpeg"/>
+    </div>
+    <h4>
+     Chaaru sree
+    </h4>
+    <div class="role">
+     Science Lead
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="team-category reveal">
+  <h3 class="team-category-title">
+   Development
+  </h3>
+   <div class="team-card tilt-card">
+    <div class="team-avatar">
+     <img alt="Sabari" loading="lazy" src="assets/team/mem/sakthi.jpeg"/>
+    </div>
+    <h4>
+     Sakthivel
+    </h4>
+    <div class="role">
+     Dev Lead
+    </div>
+   </div>
+ </div>
+ <div class="team-category reveal">
+  <h3 class="team-category-title">
+   Members
+  </h3>
+  <div class="members-grid">
+  <div class="team-card member-card">
+   <div class="team-avatar">
+    <img alt="Logesh Waran" loading="lazy" src="assets/team/mem/Dinesh Raj P.png.jpeg"/>
+   </div>
+   <h4>
+    Dinesh Raj
+   </h4>
+  </div>
+  <div class="team-card member-card">
+   <div class="team-avatar">
+    <img alt="Kabilnarayanan" loading="lazy" src="assets/team/mem/joshita.jpeg"/>
+   </div>
+   <h4>
+    Joshita
+   </h4>
+  </div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Logesh Waran" loading="lazy" src="assets/team/mem/KabilNarayanan.png"/>
+ </div>
+ <h4>
+  KabilNarayanan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Logesh Waran" loading="lazy" src="assets/team/mem/LOGESH WARAN.png"/>
+ </div>
+ <h4>
+  Logesh Waran
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Member" loading="lazy" src="assets/team/mem/1000053734.png"/>
+ </div>
+ <h4>
+  Gurubaran
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Prasanna B T" loading="lazy" src="assets/team/mem/Prasanna B T.png"/>
+ </div>
+ <h4>
+  Prasanna B T
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Saravanan J" loading="lazy" src="assets/team/mem/Saravanan J.jpg"/>
+ </div>
+ <h4>
+  Saravanan J
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/Shriram_V.jpg"/>
+ </div>
+ <h4>
+  Shriram V
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/harini.png"/>
+ </div>
+ <h4>
+  Harini
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/Mohammed yunus K.jpeg"/>
+ </div>
+ <h4>
+  Mohammed Yunus
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/TAMIL ARASAN B.jpg"/>
+ </div>
+ <h4>
+  Tamilarasan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/ganesh ram.jpg"/>
+ </div>
+ <h4>
+  Ganesh Ram
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/sankar.jpeg"/>
+ </div>
+ <h4>
+  Sankarabalan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/inban.jpeg"/>
+ </div>
+ <h4>
+  Inban
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/maharishi.jpeg"/>
+ </div>
+ <h4>
+  Maharishi
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/harish.jpeg"/>
+ </div>
+ <h4>
+  Harish
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Shriram V" loading="lazy" src="assets/team/mem/Nijandan S.jpg"/>
+ </div>
+ <h4>
+  Nijandan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Amirtha Varshini Y S" loading="lazy" src="assets/team/mem/AMIRTHA VARSHINI Y S .jpg"/>
+ </div>
+ <h4>
+  Amirtha Varshini Y S
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Anjana J" loading="lazy" src="assets/team/mem/ANJANA J.png"/>
+ </div>
+ <h4>
+  Anjana J
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Azim Fathima" loading="lazy" src="assets/team/mem/AZIM FATHIMA.jpg"/>
+ </div>
+ <h4>
+  Azim Fathima
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Benedict Offeron A" loading="lazy" src="assets/team/mem/BENEDICT OFFERON A .JPG"/>
+ </div>
+ <h4>
+  Benedict Offeron A
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Deepika" loading="lazy" src="assets/team/mem/Deepika.png"/>
+ </div>
+ <h4>
+  Deepika
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Dhanyashri" loading="lazy" src="assets/team/mem/Dhanyashri.png"/>
+ </div>
+ <h4>
+  Dhanyashri
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Dinesh" loading="lazy" src="assets/team/mem/Dinesh.jpeg"/>
+ </div>
+ <h4>
+  Dinesh
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Giriprasad" loading="lazy" src="assets/team/mem/Giriprasad.jpg"/>
+ </div>
+ <h4>
+  Giriprasad
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Haricharan P" loading="lazy" src="assets/team/mem/HARICHARAN P_MECHANICAL .jpeg"/>
+ </div>
+ <h4>
+  Haricharan P
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Hem Prasad" loading="lazy" src="assets/team/mem/Hem Prasad.png"/>
+ </div>
+ <h4>
+  Hem Prasad
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Ieswarya" loading="lazy" src="assets/team/mem/IESWARYA.png"/>
+ </div>
+ <h4>
+  Ieswarya
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Kabilan" loading="lazy" src="assets/team/mem/kabilan.png"/>
+ </div>
+ <h4>
+  Kabilan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Karthiban" loading="lazy" src="assets/team/mem/KARTHIBAN.png"/>
+ </div>
+ <h4>
+  Karthiban
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Karthik" loading="lazy" src="assets/team/mem/KARTHIK.png"/>
+ </div>
+ <h4>
+  Karthik
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Kiran Kumar" loading="lazy" src="assets/team/mem/KIRAN KUMAR.png"/>
+ </div>
+ <h4>
+  Kiran Kumar
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Lithesh" loading="lazy" src="assets/team/mem/Lithesh.png"/>
+ </div>
+ <h4>
+  Lithesh
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="M Agilan" loading="lazy" src="assets/team/mem/M AGILAN.png"/>
+ </div>
+ <h4>
+  M Agilan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Mahalakshmi" loading="lazy" src="assets/team/mem/Mahalakshmi.png"/>
+ </div>
+ <h4>
+  Mahalakshmi
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Manieswari M V" loading="lazy" src="assets/team/mem/MANIESWARI M V .jpg"/>
+ </div>
+ <h4>
+  Manieswari M V
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Maniram H" loading="lazy" src="assets/team/mem/Maniram H_Mechanical.jpeg"/>
+ </div>
+ <h4>
+  Maniram H
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Muthu Karthick K" loading="lazy" src="assets/team/mem/MUTHU KARTHICK K .jpeg"/>
+ </div>
+ <h4>
+  Muthu Karthick K
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Nandita" loading="lazy" src="assets/team/mem/nandita.jpeg"/>
+ </div>
+ <h4>
+  Nandita
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Prajith Haricharan" loading="lazy" src="assets/team/mem/PRAJITH HARICHARAN.png"/>
+ </div>
+ <h4>
+  Prajith Haricharan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Pranesh" loading="lazy" src="assets/team/mem/Pranesh.JPG"/>
+ </div>
+ <h4>
+  Pranesh
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Sakthimurugan S" loading="lazy" src="assets/team/mem/SAKTHIMURUGAN S.jpeg"/>
+ </div>
+ <h4>
+  Sakthimurugan S
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Samyuktha" loading="lazy" src="assets/team/mem/Samyuktha.png"/>
+ </div>
+ <h4>
+  Samyuktha
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Santhosh Kumar" loading="lazy" src="assets/team/mem/Santhosh kumar.jpeg"/>
+ </div>
+ <h4>
+  Santhosh Kumar
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Sricharan" loading="lazy" src="assets/team/mem/Sricharan.jpg"/>
+ </div>
+ <h4>
+  Sricharan
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Suchitra" loading="lazy" src="assets/team/mem/SUCHITRA .png"/>
+ </div>
+ <h4>
+  Suchitra
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Sushanth" loading="lazy" src="assets/team/mem/SUSHANTH.png"/>
+ </div>
+ <h4>
+  Sushanth
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Tazim Sheriff.R" loading="lazy" src="assets/team/mem/Tazim sheriff.R.jpg"/>
+ </div>
+ <h4>
+  Tazim Sheriff.R
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Viruthikas" loading="lazy" src="assets/team/mem/ViruthikaS.jpg"/>
+ </div>
+ <h4>
+  Viruthikas
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Yashwanth Raam Siva" loading="lazy" src="assets/team/mem/YASHWANTH RAAM SIVA.jpg"/>
+ </div>
+ <h4>
+  Yashwanth Raam Siva
+ </h4>
+</div>
+<div class="team-card member-card">
+ <div class="team-avatar">
+  <img alt="Yogeshwar" loading="lazy" src="assets/team/mem/Yogeshwar.jpeg"/>
+ </div>
+ <h4>
+  Yogeshwar
+ </h4>
+</div>
+</div>
+</div>
+</div>
+
     
 
-       <!-- Footer Start -->
-       <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand p-0">
-                            <img class="img-fluid rounded" src="img/logo-color.png" style="width: 200px; height: 200px; clip-path: circle();" >
-                        </a>
-                        <p class="mt-3 mb-4">Design, build, and operate a rover capable of exploring and conducting scientific experiments on other planets, while inspiring and educating future generations of scientists, engineers, and space enthusiasts.</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-dark">Sign Up</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Get In Touch</h3>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">SAIRAM INSTITUTIONS</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">Chennai, INDIA</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">adastraroverteam@gmail.com</p>
-                            </div>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary btn-square me-2" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Popular Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About</a>
-                                <a class="text-light mb-2" href="projects.html"><i class="bi bi-arrow-right text-primary me-2"></i>Projects</a>
-                                <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                                <a class="text-light" href="blog.html"><i class="bi bi-arrow-right text-primary me-2"></i>Blogs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo"><img src="assets/logo.png" alt="Ad Astra"><span class="nav-logo-text">AD ASTRA</span></a>
+          <p>A student-run multidisciplinary team from Sri Sairam Institutions, Chennai, building Mars rovers.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/teamadastra/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/ad-astra-rover-team/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://www.youtube.com/@teamadastra" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+          </div>
         </div>
-    </div>
-    <div class="container-fluid text-white" style="background: #010101;">
-        <div class="container text-center">
-            <div class="row justify-content-end">
-                <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">AD ASTRA</a>. All Rights Reserved. 
-                    </div>
-                </div>
-            </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html#about">About Us</a><a href="subsystems.html">Subsystems</a><a href="competitions.html">Competitions</a><a href="team.html">Our Team</a>
         </div>
+        <div class="footer-col">
+          <h4>Compete</h4><a href="https://urc.marssociety.org/home/about-urc" target="_blank">URC</a><a
+            href="https://roverchallenge.org/" target="_blank">IRC</a><a
+            href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" target="_blank">ARC</a><a
+            href="https://roverchallenge.eu/en/erc-robotics-competition/" target="_blank">ERC</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4><a href="mailto:adastraroverteam@gmail.com">adastraroverteam@gmail.com</a><a
+            href="tel:+917530085108">+91 7530085108</a><a href="#">Sri Sairam Institutions</a><a href="#">Chennai,
+            India</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Team Ad Astra. All Rights Reserved.</p>
+        <div class="footer-bottom-links"><a href="index.html">To the Stars, Through Hardships ✦</a></div>
+      </div>
     </div>
-    <!-- Footer End -->
+  </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Main Script -->
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>

@@ -1,306 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <title>AD ASTRA ROVER</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free HTML Templates" name="keywords">
-        <meta content="Free HTML Templates" name="description">
-    
-        <!-- Favicon -->
-        <link href="img/logo.png" rel="icon">
-    
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    
-        <!-- Libraries Stylesheet -->
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-    
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description"
+    content="Team Ad Astra — A student-run multidisciplinary rover team from Sri Sairam Institutions, Chennai. Designing Mars rovers to explore the Red Planet.">
+  <title>AD ASTRA — To the Stars, Through Hardships</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner"></div>
+
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-rover">
+      <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="15" width="60" height="25" rx="5" fill="#E87A2D" opacity="0.8" />
+        <rect x="35" y="5" width="20" height="15" rx="3" fill="#E87A2D" opacity="0.6" />
+        <line x1="45" y1="5" x2="45" y2="0" stroke="#E87A2D" stroke-width="2" />
+        <rect x="42" y="-3" width="6" height="5" rx="1" fill="#E87A2D" opacity="0.7" />
+        <line x1="80" y1="25" x2="95" y2="20" stroke="#E87A2D" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="95" y1="20" x2="105" y2="28" stroke="#E87A2D" stroke-width="2" stroke-linecap="round" />
+        <circle cx="25" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="25" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="55" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="55" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <circle cx="80" cy="45" r="8" fill="none" stroke="#E87A2D" stroke-width="2" />
+        <circle cx="80" cy="45" r="3" fill="#E87A2D" opacity="0.5" />
+        <line x1="25" y1="40" x2="35" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+        <line x1="55" y1="40" x2="65" y2="40" stroke="#E87A2D" stroke-width="1.5" />
+      </svg>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>SAIRAM INSTITUTIONS,</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>Chennai, INDIA</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>adastraroverteam@gmail.com</small>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
-                </div>
-            </div>
-        </div>
+    <div class="preloader-text">AD ASTRA</div>
+    <div class="preloader-bar">
+      <div class="preloader-bar-fill"></div>
     </div>
-    <!-- Topbar End -->
+  </div>
 
+  <!-- STAR CANVAS -->
+  <canvas id="star-canvas"></canvas>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative p-0">
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <img class="img-fluid rounded" src="img/logo-color.jpg" style="width: 100px; height: 100px; clip-path: circle();" >
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="irc.html" class="nav-item nav-link ">IRC</a>
-                            <a href="about.html" class="nav-item nav-link ">About</a>
-                            <a href="projects.html" class="nav-item nav-link">Projects</a>
-                            <a href="blog.html" class="nav-item nav-link">Gallery</a>
-                            <a href="team.html" class="nav-item nav-link">Team</a>
-                            <a href="contact.html" class="nav-item nav-link active">Contact</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+   <!-- SPACE & ROVER ELEMENTS -->
+  <div class="parallax-dust">
+  <div class="space-asset satellite-1">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M40 30L60 30L60 70L40 70Z M20 40L40 40L40 60L20 60Z M60 40L80 40L80 60L60 60Z M48 20L52 20L52 30L48 30Z M48 70L52 70L52 80L48 80Z"
+        fill="rgba(232,122,45,0.15)" />
+      <circle cx="50" cy="50" r="4" fill="var(--accent)" />
+    </svg>
+  </div>
+  <div class="space-asset drone-2">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 40L70 40L70 60L30 60Z M45 25L55 25L55 40L45 40Z M35 60L45 75L30 75Z M65 60L55 75L70 75Z"
+        fill="rgba(108,58,237,0.15)" />
+      <circle cx="25" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+      <circle cx="75" cy="45" r="8" fill="none" stroke="rgba(108,58,237,0.2)" stroke-width="2" />
+    </svg>
+  </div>
+  <div class="space-asset rock-3"></div>
+  <div class="space-asset rock-4"></div>
+  <div class="space-asset rock-5"></div>
+  <div class="space-asset rover-arm">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 80L30 80L30 60L50 60L50 40L70 40L70 20L80 20" fill="none" stroke="rgba(232,122,45,0.2)"
+        stroke-width="4" />
+      <circle cx="25" cy="80" r="5" fill="rgba(232,122,45,0.3)" />
+      <circle cx="50" cy="60" r="4" fill="rgba(232,122,45,0.3)" />
+      <circle cx="75" cy="20" r="6" fill="rgba(232,122,45,0.4)" />
+    </svg>
+  </div>
+  <div class="space-asset rock-6"></div>
+  <div class="space-asset rock-7"></div>
+  </div>
 
-        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-            <div class="row py-5">
-                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn">Contact Us</h1>
-                    <a href="" class="h5 text-white">Home |</a>
-                    <a href="" class="h5 text-white">Contact</a>
-                </div>
-            </div>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Ad Astra Logo">
+        <span class="nav-logo-text">AD ASTRA</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="subsystems.html">Subsystems</a>
+        <a href="competitions.html">Competitions</a>
+        <a href="team.html">Team</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="portal/login.html" class="nav-portal-link">Portal</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
-    <!-- Navbar End -->
+  </nav>
 
-
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(61, 28, 18, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-links">
+      <a href="index.html">Home</a><a href="index.html#about">About</a><a href="subsystems.html">Subsystems</a>
+      <a href="competitions.html">Competitions</a><a href="team.html">Team</a><a href="achievements.html">Achievements</a><a
+        href="contact.html">Contact</a><a href="portal/login.html" class="nav-portal-link">Portal</a>
     </div>
-    <!-- Full Screen Search End -->
+  </div>
 
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
-                <h1 class="mb-0">If You Have Any Query, Feel Free To Contact Us</h1>
+<div style="height: 120px; width: 100%;"></div>
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Get In Touch</span>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Join Our Mission</h2>
+        <p class="section-desc">Ready to explore the unknown? We'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3>Let's build the <span>future</span> together.</h3>
+          <p>If you want to be part of our rover team, feel free to reach out. We're always looking for passionate space
+            enthusiasts.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-text">
+                <h4>Location</h4>
+                <p><a href="https://maps.google.com/?q=Sri+Sairam+Institutions,+Chennai,+India" target="_blank" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">Sri Sairam Institutions, Chennai, India</a></p>
+              </div>
             </div>
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.1s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+91 9176348551</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-envelope-open text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Email us</h5>
-                            <h4 class="text-primary mb-0">adastraroverteam@gmail.com</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-map-marker-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Visit us</h5>
-                            <h4 class="text-primary mb-0">Chennai, INDIA</h4>
-                        </div>
-                    </div>
-                </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">✉️</div>
+              <div class="contact-item-text">
+                <h4>Email</h4>
+                <p><a href="mailto:adastraroverteam@gmail.com" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">adastraroverteam@gmail.com</a></p>
+              </div>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                        <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124426.13598818958!2d80.03526735866154!3d12.951572049171268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f596c7fb72c9%3A0x8e7a30529f9ef227!2sSri%20Sairam%20Engineering%20College!5e0!3m2!1sen!2sin!4v1676059484408!5m2!1sen!2sin"
-                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
-                </div>
-            </div>        
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div class="contact-item-text">
+                <h4>Phone</h4>
+                <p><a href="tel:+919176348551" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='inherit'">+91 9176348551</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.instagram.com/teamadastra/" target="_blank" class="social-link"
+              title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/ad-astra-rover-team/" target="_blank" class="social-link"
+              title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://www.youtube.com/@teamadastra" target="_blank" class="social-link" title="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+            <a href="mailto:adastraroverteam@gmail.com" class="social-link" title="Email">✉️</a>
+          </div>
         </div>
+        <div class="join-form reveal-right">
+          <h3><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Contact Us</h3>
+          <p>Have a question or want to sponsor us? Send us a message.</p>
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- USER: Get your free key at https://web3forms.com and paste it below -->
+            <input type="hidden" name="access_key" value="8201278f-df83-4ead-9c8b-f5bb744bef6a">
+            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name"
+                placeholder="Your full name" required></div>
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"
+                placeholder="your.email@example.com" required></div>
+            <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject"
+                placeholder="Purpose of inquiry (e.g., Sponsorship, Inquiry, Collaboration)" required></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message"
+                placeholder="How can we help you?" rows="4" required></textarea></div>
+            <button type="submit" class="btn btn-primary" id="submit-btn" style="width: 100%;">Send Message</button>
+            <div id="form-msg" style="margin-top: 15px; font-size: 0.9rem; display: none; text-align: center; color: var(--accent);"></div>
+          </form>
+        </div>
+      </div>
     </div>
-    <!-- Contact End -->
+  </section>
 
-
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-            <h1 class="mb-0">Partners</h1>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="nav-logo"><img src="assets/logo.png" alt="Ad Astra"><span class="nav-logo-text">AD ASTRA</span></a>
+          <p>A student-run multidisciplinary team from Sri Sairam Institutions, Chennai, building Mars rovers.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/teamadastra/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://www.linkedin.com/company/ad-astra-rover-team/" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://www.youtube.com/@teamadastra" target="_blank" class="social-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
+          </div>
         </div>
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <img src="img/vendor-1.jpg" alt="" style="width: 140px; height: 100px; margin-left: 100px; ">
-                <img src="img/vector-2.png" alt="" style="width: 100px; height: 100px; margin-left: 100px; ">
-                <img src="img/vendor-3.jpeg" alt="" style="width: 140px; height: 100px; margin-left: 100px; ">
-                <img src="img/vendor-4.jpeg" alt="" style="width: 140px; height: 100px; margin-left: 100px; ">
-                <img src="img/vendor-5.jpeg" alt="" style="width: 120px; height: 100px; margin-left: 100px; ">
-            </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4><a href="index.html#about">About Us</a><a href="subsystems.html">Subsystems</a><a href="competitions.html">Competitions</a><a href="team.html">Our Team</a>
         </div>
+        <div class="footer-col">
+          <h4>Compete</h4><a href="https://urc.marssociety.org/home/about-urc" target="_blank">URC</a><a
+            href="https://roverchallenge.org/" target="_blank">IRC</a><a
+            href="https://set.adelaide.edu.au/atcsr/australian-rover-challenge/" target="_blank">ARC</a><a
+            href="https://roverchallenge.eu/en/erc-robotics-competition/" target="_blank">ERC</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4><a href="mailto:adastraroverteam@gmail.com">adastraroverteam@gmail.com</a><a
+            href="tel:+917530085108">+91 7530085108</a><a href="#">Sri Sairam Institutions</a><a href="#">Chennai,
+            India</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Team Ad Astra. All Rights Reserved.</p>
+        <div class="footer-bottom-links"><a href="index.html">To the Stars, Through Hardships ✦</a></div>
+      </div>
     </div>
-    <!-- Vendor End -->
-    
+  </footer>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand p-0">
-                            <img class="img-fluid rounded" src="img/logo-color.png" style="width: 200px; height: 200px; clip-path: circle();" >
-                        </a>
-                        <p class="mt-3 mb-4">Design, build, and operate a rover capable of exploring and conducting scientific experiments on other planets, while inspiring and educating future generations of scientists, engineers, and space enthusiasts.</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-dark">Sign Up</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Get In Touch</h3>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">SRI SAIRAM INSTITUTIONS</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">Chennai, INDIA</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">adastraroverteam@gmail.com</p>
-                            </div>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary btn-square me-2" href="https://www.youtube.com/@adastra_roverteam"><i class="fab fa-youtube fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/ad-astra-team-174bb2265"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="https://instagram.com/ad_astra_roverteam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Popular Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About</a>
-                                <a class="text-light mb-2" href="projects.html"><i class="bi bi-arrow-right text-primary me-2"></i>Projects</a>
-                                <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
-                                <a class="text-light" href="blog.html"><i class="bi bi-arrow-right text-primary me-2"></i>Blogs</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-white" style="background: #010101;">
-        <div class="container text-center">
-            <div class="row justify-content-end">
-                <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">AD ASTRA</a>. All Rights Reserved. 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- GSAP & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Main Script -->
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>
