@@ -622,40 +622,102 @@ async function loadMyDocuments() {
 
 // ---------- PENDING APPROVALS (captain / sub_team_lead) ----------
 async function loadPendingApprovals() {
-  const el = document.getElementById("pendingApprovalsList");
-  el.innerHTML = `<div class="empty-state">Loading...</div>`;
+    const el = document.getElementById("pendingApprovalsList");
+    el.innerHTML = `<div class="empty-state">Loading...</div>`;
 
-  const { data, error } = await portalClient
-    .from("attendance")
-    .select("id, date, type, user_id, profiles!attendance_user_id_fkey(full_name), documents(id,file_url, file_name), od_periods(title, start_date, end_date)")
-    .eq("approved", false)
-    .order("created_at", { ascending: false });
+    const { data, error } = await portalClient
+        .from("attendance")
+        .select(`
+            id,
+            date,
+            type,
+            user_id,
+            profiles!attendance_user_id_fkey(full_name),
+            documents(id, file_url, file_name),
+            od_periods(title, start_date, end_date)
+        `)
+        .eq("approved", false)
+        .order("created_at", { ascending: false });
 
-  if (error) { el.innerHTML = `<div class="empty-state">Failed to load: ${error.message}</div>`; return; }
-  if (!data.length) { el.innerHTML = `<div class="empty-state">No pending approvals right now.</div>`; return; }
+    if (error) {
+        console.error("Pending approvals error:", error);
+        el.innerHTML = `
+            <div class="empty-state">
+                Failed to load: ${error.message}
+            </div>
+        `;
+        return;
+    }
 
-  el.innerHTML = data.map(row => {
-    const name = row.profiles?.full_name || "Unknown member";
-    const doc = row.documents?.[0];
-    const isOd = row.type === "od";
-    const dateLabel = isOd
-      ? (row.od_periods ? `${row.od_periods.title} (${formatDate(row.od_periods.start_date)} — ${formatDate(row.od_periods.end_date)})` : "OD")
-      : formatDate(row.date);
-    return `
-      <div class="p-row">
-        <div class="p-row-main">
-          <div class="p-row-title">${name} — ${dateLabel}</div>
-          <span class="doc-link" style="cursor:pointer;" onclick="viewDocument('${doc.id}')">View report</span>
-        </div>
-        <div class="p-row-actions">
-          <span class="status-pill ${isOd ? 'od' : 'present'}">${isOd ? "OD" : "Self-Initiative"}</span>
-          <button class="btn btn-primary btn-sm" onclick="approveAttendance('${row.id}')">Approve</button>
-        </div>
-      </div>
-    `;
-  }).join("");
+    if (!data || !data.length) {
+        el.innerHTML = `
+            <div class="empty-state">
+                No pending approvals right now.
+            </div>
+        `;
+        return;
+    }
+
+    el.innerHTML = data.map(row => {
+        const name = row.profiles?.full_name || "Unknown member";
+
+        // Safely get the first document
+        const doc = Array.isArray(row.documents)
+            ? row.documents[0]
+            : row.documents;
+
+        const isOd = row.type === "od";
+
+        const dateLabel = isOd
+            ? (
+                row.od_periods
+                    ? `${row.od_periods.title} (${formatDate(row.od_periods.start_date)} — ${formatDate(row.od_periods.end_date)})`
+                    : "OD"
+              )
+            : formatDate(row.date);
+
+        // Only show "View report" if a document actually exists
+        const documentLink = doc?.id
+            ? `<span class="doc-link"
+                     style="cursor:pointer;"
+                     onclick="viewDocument('${doc.id}')">
+                     View report
+               </span>`
+            : `<span style="color:var(--text-muted);">
+                   Report not uploaded
+               </span>`;
+
+        return `
+            <div class="p-row">
+
+                <div class="p-row-main">
+
+                    <div class="p-row-title">
+                        ${name} — ${dateLabel}
+                    </div>
+
+                    ${documentLink}
+
+                </div>
+
+                <div class="p-row-actions">
+
+                    <span class="status-pill ${isOd ? 'od' : 'present'}">
+                        ${isOd ? "OD" : "Self-Initiative"}
+                    </span>
+
+                    <button
+                        class="btn btn-primary btn-sm"
+                        onclick="approveAttendance('${row.id}')">
+                        Approve
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+    }).join("");
 }
-
 async function approveAttendance(attendanceId) {
   const { error } = await portalClient
     .from("attendance")
